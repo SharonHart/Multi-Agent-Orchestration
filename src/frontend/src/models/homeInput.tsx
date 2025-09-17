@@ -10,8 +10,8 @@ export interface QuickTask {
 export const quickTasks: QuickTask[] = [
     {
         id: "onboard",
-        title: "Onboard employee",
-        description: "Onboard a new employee, Jessica Smith.",
+        title: "Pationed History Hilights",
+        description: "Baesd on the Henderson's patient history, summarize key health events, with revelance for cardiac radiology.",
         icon: <Person20Regular />,
     },
     {
