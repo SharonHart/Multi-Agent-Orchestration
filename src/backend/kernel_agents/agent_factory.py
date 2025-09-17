@@ -17,6 +17,7 @@ from kernel_agents.group_chat_manager import GroupChatManager
 from kernel_agents.human_agent import HumanAgent
 from kernel_agents.patient_agent import PatientAgent
 from kernel_agents.planner_agent import PlannerAgent
+from kernel_agents.summary_validation_agent import SummaryValidationAgent
 from models.messages_kernel import AgentType, PlannerResponsePlan
 # pylint:disable=E0611
 from semantic_kernel.agents.azure_ai.azure_ai_agent import AzureAIAgent
@@ -34,6 +35,8 @@ class AgentFactory:
         AgentType.PATIENT: PatientAgent,
         AgentType.PLANNER: PlannerAgent,
         AgentType.GROUP_CHAT_MANAGER: GroupChatManager,  # Add GroupChatManager
+        AgentType.SUMMARY_VALIDATION: SummaryValidationAgent,  # Add this line
+
     }
 
     # Mapping of agent types to their string identifiers (for automatic tool loading)
@@ -43,6 +46,8 @@ class AgentFactory:
         AgentType.PATIENT: AgentType.PATIENT.value,
         AgentType.PLANNER: AgentType.PLANNER.value,
         AgentType.GROUP_CHAT_MANAGER: AgentType.GROUP_CHAT_MANAGER.value,
+        AgentType.SUMMARY_VALIDATION: AgentType.SUMMARY_VALIDATION.value,  # Add this line
+
     }
 
     # System messages for each agent type
@@ -52,6 +57,8 @@ class AgentFactory:
         AgentType.PATIENT: PatientAgent.default_system_message(),
         AgentType.PLANNER: PlannerAgent.default_system_message(),
         AgentType.GROUP_CHAT_MANAGER: GroupChatManager.default_system_message(),
+        AgentType.SUMMARY_VALIDATION: SummaryValidationAgent.default_system_message(),  # Add this line
+
     }
 
     # Cache of agent instances by session_id and agent_type

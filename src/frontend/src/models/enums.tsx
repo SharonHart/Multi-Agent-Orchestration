@@ -14,7 +14,8 @@ export enum AgentType {
     GENERIC = "Generic_Agent",
     TECH_SUPPORT = "Tech_Support_Agent",
     GROUP_CHAT_MANAGER = "Group_Chat_Manager",
-    PLANNER = "Planner_Agent"
+    PLANNER = "Planner_Agent",
+    SUMMARY_VALIDATION = "Summary_Validation_Agent"
 }
 
 export enum role {

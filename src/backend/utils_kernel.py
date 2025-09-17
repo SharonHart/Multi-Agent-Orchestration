@@ -3,7 +3,7 @@ import logging
 import os
 import uuid
 from typing import Any, Dict, List, Optional, Tuple
-
+from kernel_agents.generic_agent import GenericAgent
 import requests
 
 # Semantic Kernel imports
@@ -22,6 +22,7 @@ from kernel_agents.group_chat_manager import GroupChatManager
 from kernel_agents.human_agent import HumanAgent
 from kernel_agents.generic_agent import GenericAgent
 from kernel_agents.planner_agent import PlannerAgent
+from kernel_agents.summary_validation_agent import SummaryValidationAgent
 from kernel_agents.patient_agent import PatientAgent
 from models.messages_kernel import AgentType
 from semantic_kernel.agents.azure_ai.azure_ai_agent import AzureAIAgent
@@ -92,6 +93,7 @@ async def get_agents(session_id: str, user_id: str) -> Dict[str, Any]:
             AgentType.PLANNER: PlannerAgent.__name__,
             AgentType.PATIENT: PatientAgent.__name__,
             AgentType.GROUP_CHAT_MANAGER: GroupChatManager.__name__,
+            AgentType.SUMMARY_VALIDATION: SummaryValidationAgent.__name__,
         }
 
         # Convert to the agent name dictionary format used by the rest of the app
