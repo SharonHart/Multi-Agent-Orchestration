@@ -1,3 +1,1801 @@
+<<<<<<< HEAD
+{
+    "resource": {
+    "resourceType": "Patient",
+    "id": "patient-p02",
+    "identifier": [
+        {
+        "use": "official",
+        "type": {
+            "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "MR",
+                "display": "Medical Record Number"
+            }
+            ]
+        },
+        "system": "http://hospital.example.org/patients",
+        "value": "MRN-892567134"
+        },
+        {
+        "use": "secondary",
+        "type": {
+            "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "SS",
+                "display": "Social Security Number"
+            }
+            ]
+        },
+        "system": "http://hl7.org/fhir/sid/us-ssn",
+        "value": "444-78-3421"
+        }
+    ],
+    "active": true,
+    "name": [
+        {
+        "use": "official",
+        "family": "Williams",
+        "given": ["Linda", "Marie"],
+        "prefix": ["Ms."]
+        }
+    ],
+    "telecom": [
+        {
+        "system": "phone",
+        "value": "+1-555-692-1847",
+        "use": "home",
+        "rank": 1
+        },
+        {
+        "system": "phone",
+        "value": "+1-555-398-7264",
+        "use": "mobile",
+        "rank": 2
+        },
+        {
+        "system": "email",
+        "value": "linda.williams@email.com",
+        "use": "home"
+        }
+    ],
+    "gender": "female",
+    "birthDate": "1959-08-22",
+    "address": [
+        {
+        "use": "home",
+        "type": "physical",
+        "line": ["856 Pine Avenue", "Unit 12"],
+        "city": "Denver",
+        "state": "CO",
+        "postalCode": "80204",
+        "country": "US"
+        }
+    ],
+    "maritalStatus": {
+        "coding": [
+        {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+            "code": "D",
+            "display": "Divorced"
+        }
+        ]
+    },
+    "contact": [
+        {
+        "relationship": [
+            {
+            "coding": [
+                {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                "code": "C",
+                "display": "Emergency Contact"
+                }
+            ]
+            }
+        ],
+        "name": {
+            "family": "Williams",
+            "given": ["Jennifer", "Lynn"]
+        },
+        "telecom": [
+            {
+            "system": "phone",
+            "value": "+1-555-847-9523",
+            "use": "mobile"
+            }
+        ]
+        }
+    ],
+    "communication": [
+        {
+        "language": {
+            "coding": [
+            {
+                "system": "urn:ietf:bcp:47",
+                "code": "en-US",
+                "display": "English (United States)"
+            }
+            ]
+        },
+        "preferred": true
+        }
+    ],
+    "managingOrganization": {
+        "reference": "Organization/denver-pulmonary"
+    }
+    }
+},
+{
+    "resource": {
+    "resourceType": "Organization",
+    "id": "denver-pulmonary",
+    "identifier": [
+        {
+        "use": "official",
+        "system": "http://www.acme.org/organization",
+        "value": "DNV-PULM-002"
+        }
+    ],
+    "active": true,
+    "type": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+            "code": "prov",
+            "display": "Healthcare Provider"
+            }
+        ]
+        }
+    ],
+    "name": "Denver Pulmonary Medicine Associates",
+    "telecom": [
+        {
+        "system": "phone",
+        "value": "+1-555-756-3890",
+        "use": "work"
+        },
+        {
+        "system": "email",
+        "value": "contact@denverpulm.org"
+        }
+    ],
+    "address": [
+        {
+        "use": "work",
+        "line": ["1425 Respiratory Drive", "Building C, Suite 300"],
+        "city": "Denver",
+        "state": "CO",
+        "postalCode": "80202",
+        "country": "US"
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Practitioner",
+    "id": "dr-michael-chen",
+    "identifier": [
+        {
+        "use": "official",
+        "type": {
+            "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "NPI",
+                "display": "National Provider Identifier"
+            }
+            ]
+        },
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "2468135790"
+        }
+    ],
+    "active": true,
+    "name": [
+        {
+        "use": "official",
+        "family": "Chen",
+        "given": ["Michael", "David"],
+        "prefix": ["Dr."]
+        }
+    ],
+    "telecom": [
+        {
+        "system": "phone",
+        "value": "+1-555-756-3890",
+        "use": "work"
+        }
+    ],
+    "qualification": [
+        {
+        "code": {
+            "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0360",
+                "code": "MD",
+                "display": "Doctor of Medicine"
+            }
+            ]
+        }
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Condition",
+    "id": "condition-copd",
+    "clinicalStatus": {
+        "coding": [
+        {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active",
+            "display": "Active"
+        }
+        ]
+    },
+    "verificationStatus": {
+        "coding": [
+        {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed",
+            "display": "Confirmed"
+        }
+        ]
+    },
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+            "code": "problem-list-item",
+            "display": "Problem List Item"
+            }
+        ]
+        }
+    ],
+    "severity": {
+        "coding": [
+        {
+            "system": "http://snomed.info/sct",
+            "code": "24484000",
+            "display": "Severe"
+        }
+        ]
+    },
+    "code": {
+        "coding": [
+        {
+            "system": "http://snomed.info/sct",
+            "code": "13645005",
+            "display": "Chronic obstructive pulmonary disease"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "onsetDateTime": "2015-03-18",
+    "recordedDate": "2015-03-18T10:15:00Z",
+    "participant": [
+        {
+        "function": {
+            "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
+                "code": "ATND",
+                "display": "Attender"
+            }
+            ]
+        },
+        "actor": {
+            "reference": "Practitioner/dr-michael-chen"
+        }
+        }
+    ],
+    "stage": [
+        {
+        "summary": {
+            "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "426710001",
+                "display": "Chronic obstructive pulmonary disease with acute exacerbation"
+            }
+            ]
+        }
+        }
+    ],
+    "note": [
+        {
+        "text": "Severe COPD with FEV1 35% predicted. History of multiple exacerbations requiring hospitalization. Currently on triple inhaler therapy and supplemental oxygen."
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Condition",
+    "id": "condition-asthma",
+    "clinicalStatus": {
+        "coding": [
+        {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active",
+            "display": "Active"
+        }
+        ]
+    },
+    "verificationStatus": {
+        "coding": [
+        {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed",
+            "display": "Confirmed"
+        }
+        ]
+    },
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+            "code": "problem-list-item",
+            "display": "Problem List Item"
+            }
+        ]
+        }
+    ],
+    "severity": {
+        "coding": [
+        {
+            "system": "http://snomed.info/sct",
+            "code": "6736007",
+            "display": "Moderate"
+        }
+        ]
+    },
+    "code": {
+        "coding": [
+        {
+            "system": "http://snomed.info/sct",
+            "code": "195967001",
+            "display": "Asthma"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "onsetDateTime": "1985-06-12",
+    "recordedDate": "1985-06-12T14:20:00Z",
+    "participant": [
+        {
+        "function": {
+            "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
+                "code": "ATND",
+                "display": "Attender"
+            }
+            ]
+        },
+        "actor": {
+            "reference": "Practitioner/dr-michael-chen"
+        }
+        }
+    ],
+    "note": [
+        {
+        "text": "Long-standing asthma since childhood, now with asthma-COPD overlap syndrome (ACOS). Allergic triggers include dust mites and pollen. Well-controlled on ICS/LABA combination."
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Condition",
+    "id": "condition-pulmonary-hypertension",
+    "clinicalStatus": {
+        "coding": [
+        {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active",
+            "display": "Active"
+        }
+        ]
+    },
+    "verificationStatus": {
+        "coding": [
+        {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed",
+            "display": "Confirmed"
+        }
+        ]
+    },
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+            "code": "problem-list-item",
+            "display": "Problem List Item"
+            }
+        ]
+        }
+    ],
+    "severity": {
+        "coding": [
+        {
+            "system": "http://snomed.info/sct",
+            "code": "6736007",
+            "display": "Moderate"
+        }
+        ]
+    },
+    "code": {
+        "coding": [
+        {
+            "system": "http://snomed.info/sct",
+            "code": "70995007",
+            "display": "Pulmonary hypertension"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "onsetDateTime": "2020-11-08",
+    "recordedDate": "2020-11-08T09:30:00Z",
+    "participant": [
+        {
+        "function": {
+            "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
+                "code": "ATND",
+                "display": "Attender"
+            }
+            ]
+        },
+        "actor": {
+            "reference": "Practitioner/dr-michael-chen"
+        }
+        }
+    ],
+    "note": [
+        {
+        "text": "Secondary pulmonary hypertension due to chronic lung disease. Right heart catheterization shows mean PA pressure 35 mmHg. On targeted PAH therapy."
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Condition",
+    "id": "condition-pulmonary-fibrosis",
+    "clinicalStatus": {
+        "coding": [
+        {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active",
+            "display": "Active"
+        }
+        ]
+    },
+    "verificationStatus": {
+        "coding": [
+        {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed",
+            "display": "Confirmed"
+        }
+        ]
+    },
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+            "code": "problem-list-item",
+            "display": "Problem List Item"
+            }
+        ]
+        }
+    ],
+    "severity": {
+        "coding": [
+        {
+            "system": "http://snomed.info/sct",
+            "code": "6736007",
+            "display": "Moderate"
+        }
+        ]
+    },
+    "code": {
+        "coding": [
+        {
+            "system": "http://snomed.info/sct",
+            "code": "51615001",
+            "display": "Pulmonary fibrosis"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "onsetDateTime": "2022-01-25",
+    "recordedDate": "2022-01-25T11:45:00Z",
+    "participant": [
+        {
+        "function": {
+            "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
+                "code": "ATND",
+                "display": "Attender"
+            }
+            ]
+        },
+        "actor": {
+            "reference": "Practitioner/dr-michael-chen"
+        }
+        }
+    ],
+    "note": [
+        {
+        "text": "Idiopathic pulmonary fibrosis with progressive decline in lung function. HRCT shows subpleural honeycomb changes and traction bronchiectasis. On antifibrotic therapy."
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Condition",
+    "id": "condition-sleep-apnea",
+    "clinicalStatus": {
+        "coding": [
+        {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active",
+            "display": "Active"
+        }
+        ]
+    },
+    "verificationStatus": {
+        "coding": [
+        {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed",
+            "display": "Confirmed"
+        }
+        ]
+    },
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+            "code": "problem-list-item",
+            "display": "Problem List Item"
+            }
+        ]
+        }
+    ],
+    "severity": {
+        "coding": [
+        {
+            "system": "http://snomed.info/sct",
+            "code": "24484000",
+            "display": "Severe"
+        }
+        ]
+    },
+    "code": {
+        "coding": [
+        {
+            "system": "http://snomed.info/sct",
+            "code": "78275009",
+            "display": "Obstructive sleep apnea syndrome"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "onsetDateTime": "2018-09-14",
+    "recordedDate": "2018-09-14T13:15:00Z",
+    "participant": [
+        {
+        "function": {
+            "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
+                "code": "ATND",
+                "display": "Attender"
+            }
+            ]
+        },
+        "actor": {
+            "reference": "Practitioner/dr-michael-chen"
+        }
+        }
+    ],
+    "note": [
+        {
+        "text": "Severe obstructive sleep apnea with AHI 45/hour. Excellent CPAP compliance. Contributes to pulmonary hypertension and right heart strain."
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Condition",
+    "id": "condition-lung-cancer-history",
+    "clinicalStatus": {
+        "coding": [
+        {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "remission",
+            "display": "Remission"
+        }
+        ]
+    },
+    "verificationStatus": {
+        "coding": [
+        {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed",
+            "display": "Confirmed"
+        }
+        ]
+    },
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+            "code": "problem-list-item",
+            "display": "Problem List Item"
+            }
+        ]
+        }
+    ],
+    "severity": {
+        "coding": [
+        {
+            "system": "http://snomed.info/sct",
+            "code": "24484000",
+            "display": "Severe"
+        }
+        ]
+    },
+    "code": {
+        "coding": [
+        {
+            "system": "http://snomed.info/sct",
+            "code": "254637007",
+            "display": "Non-small cell lung cancer"
+        }
+        ]
+    },
+    "bodySite": [
+        {
+        "coding": [
+            {
+            "system": "http://snomed.info/sct",
+            "code": "39607008",
+            "display": "Lung structure"
+            }
+        ]
+        }
+    ],
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "onsetDateTime": "2017-04-10",
+    "abatementDateTime": "2018-02-28",
+    "recordedDate": "2017-04-10T08:45:00Z",
+    "participant": [
+        {
+        "function": {
+            "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
+                "code": "ATND",
+                "display": "Attender"
+            }
+            ]
+        },
+        "actor": {
+            "reference": "Practitioner/dr-michael-chen"
+        }
+        }
+    ],
+    "stage": [
+        {
+        "summary": {
+            "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "67673008",
+                "display": "T1N0M0"
+            }
+            ]
+        }
+        }
+    ],
+    "note": [
+        {
+        "text": "Stage IA non-small cell lung cancer, right upper lobe. Successfully treated with lobectomy. Currently in remission with regular surveillance. 45-pack-year smoking history, quit 2017."
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Condition",
+    "id": "condition-pneumonia-recurrent",
+    "clinicalStatus": {
+        "coding": [
+        {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active",
+            "display": "Active"
+        }
+        ]
+    },
+    "verificationStatus": {
+        "coding": [
+        {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed",
+            "display": "Confirmed"
+        }
+        ]
+    },
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+            "code": "problem-list-item",
+            "display": "Problem List Item"
+            }
+        ]
+        }
+    ],
+    "severity": {
+        "coding": [
+        {
+            "system": "http://snomed.info/sct",
+            "code": "6736007",
+            "display": "Moderate"
+        }
+        ]
+    },
+    "code": {
+        "coding": [
+        {
+            "system": "http://snomed.info/sct",
+            "code": "195708003",
+            "display": "Recurrent pneumonia"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "onsetDateTime": "2019-12-05",
+    "recordedDate": "2019-12-05T16:20:00Z",
+    "participant": [
+        {
+        "function": {
+            "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
+                "code": "ATND",
+                "display": "Attender"
+            }
+            ]
+        },
+        "actor": {
+            "reference": "Practitioner/dr-michael-chen"
+        }
+        }
+    ],
+    "note": [
+        {
+        "text": "Recurrent pneumonia episodes (4 in past 2 years) likely related to impaired clearance from COPD and fibrosis. On prophylactic antibiotics during winter months."
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Condition",
+    "id": "condition-respiratory-failure",
+    "clinicalStatus": {
+        "coding": [
+        {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active",
+            "display": "Active"
+        }
+        ]
+    },
+    "verificationStatus": {
+        "coding": [
+        {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed",
+            "display": "Confirmed"
+        }
+        ]
+    },
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+            "code": "problem-list-item",
+            "display": "Problem List Item"
+            }
+        ]
+        }
+    ],
+    "severity": {
+        "coding": [
+        {
+            "system": "http://snomed.info/sct",
+            "code": "6736007",
+            "display": "Moderate"
+        }
+        ]
+    },
+    "code": {
+        "coding": [
+        {
+            "system": "http://snomed.info/sct",
+            "code": "65710008",
+            "display": "Acute respiratory failure"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "onsetDateTime": "2023-07-12",
+    "recordedDate": "2023-07-12T07:30:00Z",
+    "participant": [
+        {
+        "function": {
+            "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
+                "code": "ATND",
+                "display": "Attender"
+            }
+            ]
+        },
+        "actor": {
+            "reference": "Practitioner/dr-michael-chen"
+        }
+        }
+    ],
+    "note": [
+        {
+        "text": "Chronic Type II respiratory failure with hypercapnia. Requires supplemental oxygen 4L continuous and BiPAP at night. CO2 retention due to advanced COPD."
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Observation",
+    "id": "obs-arterial-blood-gas",
+    "status": "final",
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "laboratory",
+            "display": "Laboratory"
+            }
+        ]
+        }
+    ],
+    "code": {
+        "coding": [
+        {
+            "system": "http://loinc.org",
+            "code": "24336-0",
+            "display": "Gas panel - Arterial blood"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "effectiveDateTime": "2024-09-12T09:15:00Z",
+    "component": [
+        {
+        "code": {
+            "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "2744-1",
+                "display": "pH of Arterial blood"
+            }
+            ]
+        },
+        "valueQuantity": {
+            "value": 7.35,
+            "system": "http://unitsofmeasure.org",
+            "code": "[pH]"
+        },
+        "referenceRange": [
+            {
+            "low": {
+                "value": 7.35,
+                "system": "http://unitsofmeasure.org",
+                "code": "[pH]"
+            },
+            "high": {
+                "value": 7.45,
+                "system": "http://unitsofmeasure.org",
+                "code": "[pH]"
+            },
+            "text": "Normal: 7.35-7.45"
+            }
+        ]
+        },
+        {
+        "code": {
+            "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "2019-8",
+                "display": "Carbon dioxide partial pressure in Arterial blood"
+            }
+            ]
+        },
+        "valueQuantity": {
+            "value": 58,
+            "unit": "mmHg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mm[Hg]"
+        },
+        "referenceRange": [
+            {
+            "low": {
+                "value": 35,
+                "unit": "mmHg",
+                "system": "http://unitsofmeasure.org",
+                "code": "mm[Hg]"
+            },
+            "high": {
+                "value": 45,
+                "unit": "mmHg",
+                "system": "http://unitsofmeasure.org",
+                "code": "mm[Hg]"
+            },
+            "text": "Normal: 35-45 mmHg"
+            }
+        ],
+        "interpretation": [
+            {
+            "coding": [
+                {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+                }
+            ]
+            }
+        ]
+        },
+        {
+        "code": {
+            "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "2703-7",
+                "display": "Oxygen partial pressure in Arterial blood"
+            }
+            ]
+        },
+        "valueQuantity": {
+            "value": 62,
+            "unit": "mmHg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mm[Hg]"
+        },
+        "referenceRange": [
+            {
+            "low": {
+                "value": 80,
+                "unit": "mmHg",
+                "system": "http://unitsofmeasure.org",
+                "code": "mm[Hg]"
+            },
+            "high": {
+                "value": 100,
+                "unit": "mmHg",
+                "system": "http://unitsofmeasure.org",
+                "code": "mm[Hg]"
+            },
+            "text": "Normal: 80-100 mmHg"
+            }
+        ],
+        "interpretation": [
+            {
+            "coding": [
+                {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+                }
+            ]
+            }
+        ]
+        }
+    ],
+    "note": [
+        {
+        "text": "Chronic respiratory acidosis with compensated hypercapnia and hypoxemia on 4L O2"
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Observation",
+    "id": "obs-oxygen-saturation",
+    "status": "final",
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+            }
+        ]
+        }
+    ],
+    "code": {
+        "coding": [
+        {
+            "system": "http://loinc.org",
+            "code": "59408-5",
+            "display": "Oxygen saturation in Arterial blood by Pulse oximetry"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "effectiveDateTime": "2024-09-12T09:15:00Z",
+    "valueQuantity": {
+        "value": 89,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+    },
+    "referenceRange": [
+        {
+        "low": {
+            "value": 95,
+            "unit": "%",
+            "system": "http://unitsofmeasure.org",
+            "code": "%"
+        },
+        "high": {
+            "value": 100,
+            "unit": "%",
+            "system": "http://unitsofmeasure.org",
+            "code": "%"
+        },
+        "text": "Normal: 95-100%"
+        }
+    ],
+    "interpretation": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "L",
+            "display": "Low"
+            }
+        ]
+        }
+    ],
+    "note": [
+        {
+        "text": "On 4L supplemental oxygen via nasal cannula"
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Observation",
+    "id": "obs-bnp-pulmonary",
+    "status": "final",
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "laboratory",
+            "display": "Laboratory"
+            }
+        ]
+        }
+    ],
+    "code": {
+        "coding": [
+        {
+            "system": "http://loinc.org",
+            "code": "30934-4",
+            "display": "BNP (B-type natriuretic peptide)"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "effectiveDateTime": "2024-09-12T09:15:00Z",
+    "valueQuantity": {
+        "value": 425,
+        "unit": "pg/mL",
+        "system": "http://unitsofmeasure.org",
+        "code": "pg/mL"
+    },
+    "referenceRange": [
+        {
+        "high": {
+            "value": 100,
+            "unit": "pg/mL",
+            "system": "http://unitsofmeasure.org",
+            "code": "pg/mL"
+        },
+        "text": "Normal: <100 pg/mL"
+        }
+    ],
+    "interpretation": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "H",
+            "display": "High"
+            }
+        ]
+        }
+    ],
+    "note": [
+        {
+        "text": "Elevated due to right heart strain from pulmonary hypertension"
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Observation",
+    "id": "obs-alpha1-antitrypsin",
+    "status": "final",
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "laboratory",
+            "display": "Laboratory"
+            }
+        ]
+        }
+    ],
+    "code": {
+        "coding": [
+        {
+            "system": "http://loinc.org",
+            "code": "6770-6",
+            "display": "Alpha 1 antitrypsin"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "effectiveDateTime": "2024-09-12T09:15:00Z",
+    "valueQuantity": {
+        "value": 85,
+        "unit": "mg/dL",
+        "system": "http://unitsofmeasure.org",
+        "code": "mg/dL"
+    },
+    "referenceRange": [
+        {
+        "low": {
+            "value": 90,
+            "unit": "mg/dL",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg/dL"
+        },
+        "high": {
+            "value": 200,
+            "unit": "mg/dL",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg/dL"
+        },
+        "text": "Normal: 90-200 mg/dL"
+        }
+    ],
+    "interpretation": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "L",
+            "display": "Low"
+            }
+        ]
+        }
+    ],
+    "note": [
+        {
+        "text": "Borderline low alpha-1 antitrypsin, contributing factor to COPD development"
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Observation",
+    "id": "obs-d-dimer",
+    "status": "final",
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "laboratory",
+            "display": "Laboratory"
+            }
+        ]
+        }
+    ],
+    "code": {
+        "coding": [
+        {
+            "system": "http://loinc.org",
+            "code": "48066-5",
+            "display": "D-dimer"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "effectiveDateTime": "2024-09-12T09:15:00Z",
+    "valueQuantity": {
+        "value": 750,
+        "unit": "ng/mL",
+        "system": "http://unitsofmeasure.org",
+        "code": "ng/mL"
+    },
+    "referenceRange": [
+        {
+        "high": {
+            "value": 500,
+            "unit": "ng/mL",
+            "system": "http://unitsofmeasure.org",
+            "code": "ng/mL"
+        },
+        "text": "Normal: <500 ng/mL"
+        }
+    ],
+    "interpretation": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "H",
+            "display": "High"
+            }
+        ]
+        }
+    ],
+    "note": [
+        {
+        "text": "Elevated D-dimer consistent with chronic thromboembolic risk"
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Observation",
+    "id": "obs-eosinophils",
+    "status": "final",
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "laboratory",
+            "display": "Laboratory"
+            }
+        ]
+        }
+    ],
+    "code": {
+        "coding": [
+        {
+            "system": "http://loinc.org",
+            "code": "711-2",
+            "display": "Eosinophils"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "effectiveDateTime": "2024-09-12T09:15:00Z",
+    "valueQuantity": {
+        "value": 8.2,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+    },
+    "referenceRange": [
+        {
+        "low": {
+            "value": 1.0,
+            "unit": "%",
+            "system": "http://unitsofmeasure.org",
+            "code": "%"
+        },
+        "high": {
+            "value": 4.0,
+            "unit": "%",
+            "system": "http://unitsofmeasure.org",
+            "code": "%"
+        },
+        "text": "Normal: 1.0-4.0%"
+        }
+    ],
+    "interpretation": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "H",
+            "display": "High"
+            }
+        ]
+        }
+    ],
+    "note": [
+        {
+        "text": "Elevated eosinophils suggesting allergic component to asthma"
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ige-total",
+    "status": "final",
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "laboratory",
+            "display": "Laboratory"
+            }
+        ]
+        }
+    ],
+    "code": {
+        "coding": [
+        {
+            "system": "http://loinc.org",
+            "code": "19113-0",
+            "display": "IgE"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "effectiveDateTime": "2024-09-12T09:15:00Z",
+    "valueQuantity": {
+        "value": 485,
+        "unit": "IU/mL",
+        "system": "http://unitsofmeasure.org",
+        "code": "[IU]/mL"
+    },
+    "referenceRange": [
+        {
+        "high": {
+            "value": 150,
+            "unit": "IU/mL",
+            "system": "http://unitsofmeasure.org",
+            "code": "[IU]/mL"
+        },
+        "text": "Normal: <150 IU/mL"
+        }
+    ],
+    "interpretation": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "H",
+            "display": "High"
+            }
+        ]
+        }
+    ],
+    "note": [
+        {
+        "text": "Markedly elevated total IgE consistent with allergic asthma"
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Observation",
+    "id": "obs-vitamin-d",
+    "status": "final",
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "laboratory",
+            "display": "Laboratory"
+            }
+        ]
+        }
+    ],
+    "code": {
+        "coding": [
+        {
+            "system": "http://loinc.org",
+            "code": "25058-6",
+            "display": "25-Hydroxyvitamin D3"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "effectiveDateTime": "2024-09-12T09:15:00Z",
+    "valueQuantity": {
+        "value": 18,
+        "unit": "ng/mL",
+        "system": "http://unitsofmeasure.org",
+        "code": "ng/mL"
+    },
+    "referenceRange": [
+        {
+        "low": {
+            "value": 30,
+            "unit": "ng/mL",
+            "system": "http://unitsofmeasure.org",
+            "code": "ng/mL"
+        },
+        "high": {
+            "value": 100,
+            "unit": "ng/mL",
+            "system": "http://unitsofmeasure.org",
+            "code": "ng/mL"
+        },
+        "text": "Normal: 30-100 ng/mL"
+        }
+    ],
+    "interpretation": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "L",
+            "display": "Low"
+            }
+        ]
+        }
+    ],
+    "note": [
+        {
+        "text": "Vitamin D deficiency, common in patients with limited sun exposure due to chronic illness"
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Observation",
+    "id": "obs-c-reactive-protein",
+    "status": "final",
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "laboratory",
+            "display": "Laboratory"
+            }
+        ]
+        }
+    ],
+    "code": {
+        "coding": [
+        {
+            "system": "http://loinc.org",
+            "code": "1988-5",
+            "display": "C-reactive protein"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "effectiveDateTime": "2024-09-12T09:15:00Z",
+    "valueQuantity": {
+        "value": 12.5,
+        "unit": "mg/L",
+        "system": "http://unitsofmeasure.org",
+        "code": "mg/L"
+    },
+    "referenceRange": [
+        {
+        "high": {
+            "value": 3.0,
+            "unit": "mg/L",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg/L"
+        },
+        "text": "Normal: <3.0 mg/L"
+        }
+    ],
+    "interpretation": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "H",
+            "display": "High"
+            }
+        ]
+        }
+    ],
+    "note": [
+        {
+        "text": "Elevated CRP indicating chronic inflammation from pulmonary conditions"
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Observation",
+    "id": "obs-procalcitonin",
+    "status": "final",
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "laboratory",
+            "display": "Laboratory"
+            }
+        ]
+        }
+    ],
+    "code": {
+        "coding": [
+        {
+            "system": "http://loinc.org",
+            "code": "33747-0",
+            "display": "Procalcitonin"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "effectiveDateTime": "2024-09-12T09:15:00Z",
+    "valueQuantity": {
+        "value": 0.08,
+        "unit": "ng/mL",
+        "system": "http://unitsofmeasure.org",
+        "code": "ng/mL"
+    },
+    "referenceRange": [
+        {
+        "high": {
+            "value": 0.25,
+            "unit": "ng/mL",
+            "system": "http://unitsofmeasure.org",
+            "code": "ng/mL"
+        },
+        "text": "Normal: <0.25 ng/mL"
+        }
+    ],
+    "interpretation": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "N",
+            "display": "Normal"
+            }
+        ]
+        }
+    ],
+    "note": [
+        {
+        "text": "Normal procalcitonin rules out acute bacterial infection"
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Observation",
+    "id": "obs-hemoglobin-pulm",
+    "status": "final",
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "laboratory",
+            "display": "Laboratory"
+            }
+        ]
+        }
+    ],
+    "code": {
+        "coding": [
+        {
+            "system": "http://loinc.org",
+            "code": "718-7",
+            "display": "Hemoglobin"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "effectiveDateTime": "2024-09-12T09:15:00Z",
+    "valueQuantity": {
+        "value": 16.8,
+        "unit": "g/dL",
+        "system": "http://unitsofmeasure.org",
+        "code": "g/dL"
+    },
+    "referenceRange": [
+        {
+        "low": {
+            "value": 12.0,
+            "unit": "g/dL",
+            "system": "http://unitsofmeasure.org",
+            "code": "g/dL"
+        },
+        "high": {
+            "value": 15.5,
+            "unit": "g/dL",
+            "system": "http://unitsofmeasure.org",
+            "code": "g/dL"
+        },
+        "text": "Normal female: 12.0-15.5 g/dL"
+        }
+    ],
+    "interpretation": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "H",
+            "display": "High"
+            }
+        ]
+        }
+    ],
+    "note": [
+        {
+        "text": "Secondary polycythemia due to chronic hypoxemia"
+        }
+    ]
+    }
+},
+{
+    "resource": {
+    "resourceType": "Observation",
+    "id": "obs-hematocrit-pulm",
+    "status": "final",
+    "category": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "laboratory",
+            "display": "Laboratory"
+            }
+        ]
+        }
+    ],
+    "code": {
+        "coding": [
+        {
+            "system": "http://loinc.org",
+            "code": "4544-3",
+            "display": "Hematocrit"
+        }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-p02"
+    },
+    "effectiveDateTime": "2024-09-12T09:15:00Z",
+    "valueQuantity": {
+        "value": 52,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+    },
+    "referenceRange": [
+        {
+        "low": {
+            "value": 36,
+            "unit": "%",
+            "system": "http://unitsofmeasure.org",
+            "code": "%"
+        },
+        "high": {
+            "value": 46,
+            "unit": "%",
+            "system": "http://unitsofmeasure.org",
+            "code": "%"
+        },
+        "text": "Normal female: 36-46%"
+        }
+    ],
+    "interpretation": [
+        {
+        "coding": [
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "H",
+            "display": "High"
+            }
+        ]
+        }
+    ],
+    "note": [
+        {
+        "text": "Elevated hematocrit secondary to chronic hypoxemia compensation"
+        }
+    ]
+    }
+}
+=======
 {
   "resourceType": "Bundle",
   "id": "patient-p02-lungs-bundle",
@@ -1802,3 +3600,4 @@
     }
   ]
 }
+>>>>>>> 72983bb455558c4b48ca639609730e764f658960
