@@ -10,28 +10,28 @@ export interface QuickTask {
 export const quickTasks: QuickTask[] = [
     {
         id: "onboard",
-        title: "Pationed History Hilights",
-        description: "Baesd on the Henderson's patient history, summarize key health events, with revelance for cardiac radiology.",
+        title: "Pationed Heart History",
+        description: "Based on the Henderson's patient history, summarize key health events, with relevance for cardiac radiology.",
         icon: <Person20Regular />,
     },
     {
         id: "mobile",
-        title: "Mobile plan query",
-        description: "Ask about roaming plans prior to heading overseas.",
+        title: "Pationed Lungs History",
+        description: "Based on the Henderson's patient history, summarize key health events, with relevance for lungs radiology.",
         icon: <Phone20Regular />,
     },
-    {
-        id: "addon",
-        title: "Buy add-on",
-        description: "Enable roaming on mobile plan, starting next week.",
-        icon: <ShoppingBag20Regular />,
-    },
-    {
-        id: "press",
-        title: "Draft a press release",
-        description: "Write a press release about our current products.",
-        icon: <DocumentEdit20Regular />,
-    },
+    // {
+    //     id: "addon",
+    //     title: "Buy add-on",
+    //     description: "Enable roaming on mobile plan, starting next week.",
+    //     icon: <ShoppingBag20Regular />,
+    // },
+    // {
+    //     id: "press",
+    //     title: "Draft a press release",
+    //     description: "Write a press release about our current products.",
+    //     icon: <DocumentEdit20Regular />,
+    // },
 ];
 
 export interface HomeInputProps {
