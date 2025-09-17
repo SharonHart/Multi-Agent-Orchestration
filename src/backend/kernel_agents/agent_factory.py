@@ -14,6 +14,7 @@ from kernel_agents.generic_agent import GenericAgent
 from kernel_agents.group_chat_manager import GroupChatManager
 # Import all specialized agent implementations
 from kernel_agents.human_agent import HumanAgent
+from kernel_agents.patient_agent import PatientAgent
 from kernel_agents.planner_agent import PlannerAgent  # Add PlannerAgent import
 from models.messages_kernel import AgentType, PlannerResponsePlan
 # pylint:disable=E0611
@@ -29,6 +30,7 @@ class AgentFactory:
     _agent_classes: Dict[AgentType, Type[BaseAgent]] = {
         AgentType.GENERIC: GenericAgent,
         AgentType.HUMAN: HumanAgent,
+        AgentType.PATIENT: PatientAgent,
         AgentType.PLANNER: PlannerAgent,
         AgentType.GROUP_CHAT_MANAGER: GroupChatManager,  # Add GroupChatManager
     }
@@ -37,6 +39,7 @@ class AgentFactory:
     _agent_type_strings: Dict[AgentType, str] = {
         AgentType.GENERIC: AgentType.GENERIC.value,
         AgentType.HUMAN: AgentType.HUMAN.value,
+        AgentType.PATIENT: AgentType.PATIENT.value,
         AgentType.PLANNER: AgentType.PLANNER.value,
         AgentType.GROUP_CHAT_MANAGER: AgentType.GROUP_CHAT_MANAGER.value,
     }
@@ -45,6 +48,7 @@ class AgentFactory:
     _agent_system_messages: Dict[AgentType, str] = {
         AgentType.GENERIC: GenericAgent.default_system_message(),
         AgentType.HUMAN: HumanAgent.default_system_message(),
+        AgentType.PATIENT: PatientAgent.default_system_message(),
         AgentType.PLANNER: PlannerAgent.default_system_message(),
         AgentType.GROUP_CHAT_MANAGER: GroupChatManager.default_system_message(),
     }

@@ -1,1797 +1,1805 @@
 {
-    "resource": {
-    "resourceType": "Patient",
-    "id": "patient-p01",
-    "identifier": [
-        {
-        "use": "official",
-        "type": {
-            "coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                "code": "MR",
-                "display": "Medical Record Number"
-            }
-            ]
-        },
-        "system": "http://hospital.example.org/patients",
-        "value": "MRN-789456123"
-        },
-        {
-        "use": "secondary",
-        "type": {
-            "coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                "code": "SS",
-                "display": "Social Security Number"
-            }
-            ]
-        },
-        "system": "http://hl7.org/fhir/sid/us-ssn",
-        "value": "555-12-9876"
-        }
-    ],
-    "active": true,
-    "name": [
-        {
-        "use": "official",
-        "family": "Henderson",
-        "given": ["Robert", "James"],
-        "prefix": ["Mr."]
-        }
-    ],
-    "telecom": [
-        {
-        "system": "phone",
-        "value": "+1-555-847-2391",
-        "use": "home",
-        "rank": 1
-        },
-        {
-        "system": "phone",
-        "value": "+1-555-203-7845",
-        "use": "mobile",
-        "rank": 2
-        },
-        {
-        "system": "email",
-        "value": "robert.henderson@email.com",
-        "use": "home"
-        }
-    ],
-    "gender": "male",
-    "birthDate": "1956-03-15",
-    "address": [
-        {
-        "use": "home",
-        "type": "physical",
-        "line": ["1247 Oak Street", "Apartment 3B"],
-        "city": "Springfield",
-        "state": "IL",
-        "postalCode": "62704",
-        "country": "US"
-        }
-    ],
-    "maritalStatus": {
-        "coding": [
-        {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
-            "code": "M",
-            "display": "Married"
-        }
-        ]
-    },
-    "contact": [
-        {
-        "relationship": [
-            {
-            "coding": [
+  "resourceType": "Bundle",
+  "id": "patient-p01-heart-bundle",
+  "type": "collection",
+  "timestamp": "2024-09-17T12:00:00Z",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-p01",
+        "identifier": [
+          {
+            "use": "official",
+            "type": {
+              "coding": [
                 {
-                "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
-                "code": "SP",
-                "display": "Spouse"
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "MR",
+                  "display": "Medical Record Number"
                 }
-            ]
-            }
+              ]
+            },
+            "system": "http://hospital.example.org/patients",
+            "value": "MRN-789456123"
+          },
+          {
+            "use": "secondary",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "SS",
+                  "display": "Social Security Number"
+                }
+              ]
+            },
+            "system": "http://hl7.org/fhir/sid/us-ssn",
+            "value": "555-12-9876"
+          }
         ],
-        "name": {
+        "active": true,
+        "name": [
+          {
+            "use": "official",
             "family": "Henderson",
-            "given": ["Margaret", "Anne"]
-        },
+            "given": ["Robert", "James"],
+            "prefix": ["Mr."]
+          }
+        ],
         "telecom": [
-            {
+          {
             "system": "phone",
             "value": "+1-555-847-2391",
-            "use": "home"
-            },
-            {
+            "use": "home",
+            "rank": 1
+          },
+          {
             "system": "phone",
-            "value": "+1-555-892-4567",
-            "use": "mobile"
-            }
-        ]
-        }
-    ],
-    "communication": [
-        {
-        "language": {
-            "coding": [
+            "value": "+1-555-203-7845",
+            "use": "mobile",
+            "rank": 2
+          },
+          {
+            "system": "email",
+            "value": "robert.henderson@email.com",
+            "use": "home"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1956-03-15",
+        "address": [
+          {
+            "use": "home",
+            "type": "physical",
+            "line": ["1247 Oak Street", "Apartment 3B"],
+            "city": "Springfield",
+            "state": "IL",
+            "postalCode": "62704",
+            "country": "US"
+          }
+        ],
+        "maritalStatus": {
+          "coding": [
             {
-                "system": "urn:ietf:bcp:47",
-                "code": "en-US",
-                "display": "English (United States)"
+              "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+              "code": "M",
+              "display": "Married"
             }
+          ]
+        },
+        "contact": [
+          {
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                    "code": "SP",
+                    "display": "Spouse"
+                  }
+                ]
+              }
+            ],
+            "name": {
+              "family": "Henderson",
+              "given": ["Margaret", "Anne"]
+            },
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "+1-555-847-2391",
+                "use": "home"
+              },
+              {
+                "system": "phone",
+                "value": "+1-555-892-4567",
+                "use": "mobile"
+              }
             ]
-        },
-        "preferred": true
+          }
+        ],
+        "communication": [
+          {
+            "language": {
+              "coding": [
+                {
+                  "system": "urn:ietf:bcp:47",
+                  "code": "en-US",
+                  "display": "English (United States)"
+                }
+              ]
+            },
+            "preferred": true
+          }
+        ],
+        "managingOrganization": {
+          "reference": "Organization/springfield-cardiology"
         }
-    ],
-    "managingOrganization": {
-        "reference": "Organization/springfield-cardiology"
-    }
-    }
-},
-{
-    "resource": {
-    "resourceType": "Organization",
-    "id": "springfield-cardiology",
-    "identifier": [
-        {
-        "use": "official",
-        "system": "http://www.acme.org/organization",
-        "value": "SPFD-CARDIO-001"
-        }
-    ],
-    "active": true,
-    "type": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-            "code": "prov",
-            "display": "Healthcare Provider"
-            }
-        ]
-        }
-    ],
-    "name": "Springfield Cardiovascular Associates",
-    "telecom": [
-        {
-        "system": "phone",
-        "value": "+1-555-234-5678",
-        "use": "work"
-        },
-        {
-        "system": "email",
-        "value": "contact@springfieldcardio.org"
-        }
-    ],
-    "address": [
-        {
-        "use": "work",
-        "line": ["789 Medical Center Drive", "Suite 200"],
-        "city": "Springfield",
-        "state": "IL",
-        "postalCode": "62701",
-        "country": "US"
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Practitioner",
-    "id": "dr-sarah-martinez",
-    "identifier": [
-        {
-        "use": "official",
-        "type": {
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "springfield-cardiology",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://www.acme.org/organization",
+            "value": "SPFD-CARDIO-001"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
             "coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                "code": "NPI",
-                "display": "National Provider Identifier"
-            }
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                "code": "prov",
+                "display": "Healthcare Provider"
+              }
             ]
+          }
+        ],
+        "name": "Springfield Cardiovascular Associates",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+1-555-234-5678",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "contact@springfieldcardio.org"
+          }
+        ],
+        "address": [
+          {
+            "use": "work",
+            "line": ["789 Medical Center Drive", "Suite 200"],
+            "city": "Springfield",
+            "state": "IL",
+            "postalCode": "62701",
+            "country": "US"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "dr-sarah-martinez",
+        "identifier": [
+          {
+            "use": "official",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "NPI",
+                  "display": "National Provider Identifier"
+                }
+              ]
+            },
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1234567890"
+          }
+        ],
+        "active": true,
+        "name": [
+          {
+            "use": "official",
+            "family": "Martinez",
+            "given": ["Sarah", "Elena"],
+            "prefix": ["Dr."]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+1-555-234-5678",
+            "use": "work"
+          }
+        ],
+        "qualification": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0360",
+                  "code": "MD",
+                  "display": "Doctor of Medicine"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-coronary-artery-disease",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
         },
-        "system": "http://hl7.org/fhir/sid/us-npi",
-        "value": "1234567890"
-        }
-    ],
-    "active": true,
-    "name": [
-        {
-        "use": "official",
-        "family": "Martinez",
-        "given": ["Sarah", "Elena"],
-        "prefix": ["Dr."]
-        }
-    ],
-    "telecom": [
-        {
-        "system": "phone",
-        "value": "+1-555-234-5678",
-        "use": "work"
-        }
-    ],
-    "qualification": [
-        {
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "severity": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "24484000",
+              "display": "Severe"
+            }
+          ]
+        },
         "code": {
-            "coding": [
+          "coding": [
             {
-                "system": "http://terminology.hl7.org/CodeSystem/v2-0360",
-                "code": "MD",
-                "display": "Doctor of Medicine"
+              "system": "http://snomed.info/sct",
+              "code": "53741008",
+              "display": "Coronary artery disease"
             }
-            ]
-        }
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Condition",
-    "id": "condition-coronary-artery-disease",
-    "clinicalStatus": {
-        "coding": [
-        {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-            "code": "active",
-            "display": "Active"
-        }
-        ]
-    },
-    "verificationStatus": {
-        "coding": [
-        {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-            "code": "confirmed",
-            "display": "Confirmed"
-        }
-        ]
-    },
-    "category": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-            "code": "problem-list-item",
-            "display": "Problem List Item"
-            }
-        ]
-        }
-    ],
-    "severity": {
-        "coding": [
-        {
-            "system": "http://snomed.info/sct",
-            "code": "24484000",
-            "display": "Severe"
-        }
-        ]
-    },
-    "code": {
-        "coding": [
-        {
-            "system": "http://snomed.info/sct",
-            "code": "53741008",
-            "display": "Coronary artery disease"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "onsetDateTime": "2019-05-12",
-    "recordedDate": "2019-05-12T14:30:00Z",
-    "participant": [
-        {
-        "function": {
-            "coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
-                "code": "ATND",
-                "display": "Attender"
-            }
-            ]
+          ]
         },
-        "actor": {
-            "reference": "Practitioner/dr-sarah-martinez"
-        }
-        }
-    ],
-    "note": [
-        {
-        "text": "Multi-vessel coronary artery disease confirmed by cardiac catheterization. Patient has significant stenosis in LAD and RCA. Requires ongoing medical management and lifestyle modifications."
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Condition",
-    "id": "condition-hypertension",
-    "clinicalStatus": {
-        "coding": [
-        {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-            "code": "active",
-            "display": "Active"
-        }
-        ]
-    },
-    "verificationStatus": {
-        "coding": [
-        {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-            "code": "confirmed",
-            "display": "Confirmed"
-        }
-        ]
-    },
-    "category": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-            "code": "problem-list-item",
-            "display": "Problem List Item"
-            }
-        ]
-        }
-    ],
-    "severity": {
-        "coding": [
-        {
-            "system": "http://snomed.info/sct",
-            "code": "6736007",
-            "display": "Moderate"
-        }
-        ]
-    },
-    "code": {
-        "coding": [
-        {
-            "system": "http://snomed.info/sct",
-            "code": "38341003",
-            "display": "Essential hypertension"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "onsetDateTime": "2009-01-20",
-    "recordedDate": "2009-01-20T09:15:00Z",
-    "participant": [
-        {
-        "function": {
-            "coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
-                "code": "ATND",
-                "display": "Attender"
-            }
-            ]
+        "subject": {
+          "reference": "Patient/patient-p01"
         },
-        "actor": {
-            "reference": "Practitioner/dr-sarah-martinez"
-        }
-        }
-    ],
-    "note": [
-        {
-        "text": "Long-standing essential hypertension, well-controlled on ACE inhibitor therapy. Patient monitors blood pressure at home."
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Condition",
-    "id": "condition-heart-failure",
-    "clinicalStatus": {
-        "coding": [
-        {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-            "code": "active",
-            "display": "Active"
-        }
-        ]
-    },
-    "verificationStatus": {
-        "coding": [
-        {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-            "code": "confirmed",
-            "display": "Confirmed"
-        }
-        ]
-    },
-    "category": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-            "code": "problem-list-item",
-            "display": "Problem List Item"
+        "onsetDateTime": "2019-05-12",
+        "recordedDate": "2019-05-12T14:30:00Z",
+        "participant": [
+          {
+            "function": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
+                  "code": "ATND",
+                  "display": "Attender"
+                }
+              ]
+            },
+            "actor": {
+              "reference": "Practitioner/dr-sarah-martinez"
             }
+          }
+        ],
+        "note": [
+          {
+            "text": "Multi-vessel coronary artery disease confirmed by cardiac catheterization. Patient has significant stenosis in LAD and RCA. Requires ongoing medical management and lifestyle modifications."
+          }
         ]
-        }
-    ],
-    "severity": {
-        "coding": [
-        {
-            "system": "http://snomed.info/sct",
-            "code": "6736007",
-            "display": "Moderate"
-        }
-        ]
+      }
     },
-    "code": {
-        "coding": [
-        {
-            "system": "http://snomed.info/sct",
-            "code": "84114007",
-            "display": "Heart failure"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "onsetDateTime": "2023-09-15",
-    "recordedDate": "2023-09-15T11:45:00Z",
-    "participant": [
-        {
-        "function": {
-            "coding": [
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-hypertension",
+        "clinicalStatus": {
+          "coding": [
             {
-                "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
-                "code": "ATND",
-                "display": "Attender"
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
             }
-            ]
+          ]
         },
-        "actor": {
-            "reference": "Practitioner/dr-sarah-martinez"
-        }
-        }
-    ],
-    "stage": [
-        {
-        "summary": {
-            "coding": [
+        "verificationStatus": {
+          "coding": [
             {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "severity": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "6736007",
+              "display": "Moderate"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Essential hypertension"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "onsetDateTime": "2009-01-20",
+        "recordedDate": "2009-01-20T09:15:00Z",
+        "participant": [
+          {
+            "function": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
+                  "code": "ATND",
+                  "display": "Attender"
+                }
+              ]
+            },
+            "actor": {
+              "reference": "Practitioner/dr-sarah-martinez"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Long-standing essential hypertension, well-controlled on ACE inhibitor therapy. Patient monitors blood pressure at home."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-heart-failure",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "severity": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "6736007",
+              "display": "Moderate"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "84114007",
+              "display": "Heart failure"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "onsetDateTime": "2023-09-15",
+        "recordedDate": "2023-09-15T11:45:00Z",
+        "participant": [
+          {
+            "function": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
+                  "code": "ATND",
+                  "display": "Attender"
+                }
+              ]
+            },
+            "actor": {
+              "reference": "Practitioner/dr-sarah-martinez"
+            }
+          }
+        ],
+        "stage": [
+          {
+            "summary": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "420300004",
+                  "display": "New York Heart Association Class II"
+                }
+              ]
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Heart failure with reduced ejection fraction (HFrEF), EF approximately 35%. NYHA Class II symptoms. Started on guideline-directed medical therapy."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-myocardial-infarction",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "severity": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "24484000",
+              "display": "Severe"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "22298006",
+              "display": "Myocardial infarction"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
                 "system": "http://snomed.info/sct",
-                "code": "420300004",
-                "display": "New York Heart Association Class II"
-            }
+                "code": "27896001",
+                "display": "Anterior wall of heart"
+              }
             ]
-        }
-        }
-    ],
-    "note": [
-        {
-        "text": "Heart failure with reduced ejection fraction (HFrEF), EF approximately 35%. NYHA Class II symptoms. Started on guideline-directed medical therapy."
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Condition",
-    "id": "condition-myocardial-infarction",
-    "clinicalStatus": {
-        "coding": [
-        {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-            "code": "resolved",
-            "display": "Resolved"
-        }
-        ]
-    },
-    "verificationStatus": {
-        "coding": [
-        {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-            "code": "confirmed",
-            "display": "Confirmed"
-        }
-        ]
-    },
-    "category": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-            "code": "problem-list-item",
-            "display": "Problem List Item"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "onsetDateTime": "2021-07-08",
+        "abatementDateTime": "2021-08-15",
+        "recordedDate": "2021-07-08T06:30:00Z",
+        "participant": [
+          {
+            "function": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
+                  "code": "ATND",
+                  "display": "Attender"
+                }
+              ]
+            },
+            "actor": {
+              "reference": "Practitioner/dr-sarah-martinez"
             }
+          }
+        ],
+        "note": [
+          {
+            "text": "ST-elevation myocardial infarction (STEMI) involving anterior wall. Successfully treated with primary PCI and stent placement in LAD. Patient recovered well with cardiac rehabilitation."
+          }
         ]
-        }
-    ],
-    "severity": {
-        "coding": [
-        {
-            "system": "http://snomed.info/sct",
-            "code": "24484000",
-            "display": "Severe"
-        }
-        ]
+      }
     },
-    "code": {
-        "coding": [
-        {
-            "system": "http://snomed.info/sct",
-            "code": "22298006",
-            "display": "Myocardial infarction"
-        }
-        ]
-    },
-    "bodySite": [
-        {
-        "coding": [
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-atrial-fibrillation",
+        "clinicalStatus": {
+          "coding": [
             {
-            "system": "http://snomed.info/sct",
-            "code": "27896001",
-            "display": "Anterior wall of heart"
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
             }
-        ]
-        }
-    ],
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "onsetDateTime": "2021-07-08",
-    "abatementDateTime": "2021-08-15",
-    "recordedDate": "2021-07-08T06:30:00Z",
-    "participant": [
-        {
-        "function": {
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
             "coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
-                "code": "ATND",
-                "display": "Attender"
-            }
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
             ]
-        },
-        "actor": {
-            "reference": "Practitioner/dr-sarah-martinez"
-        }
-        }
-    ],
-    "note": [
-        {
-        "text": "ST-elevation myocardial infarction (STEMI) involving anterior wall. Successfully treated with primary PCI and stent placement in LAD. Patient recovered well with cardiac rehabilitation."
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Condition",
-    "id": "condition-atrial-fibrillation",
-    "clinicalStatus": {
-        "coding": [
-        {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-            "code": "active",
-            "display": "Active"
-        }
-        ]
-    },
-    "verificationStatus": {
-        "coding": [
-        {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-            "code": "confirmed",
-            "display": "Confirmed"
-        }
-        ]
-    },
-    "category": [
-        {
-        "coding": [
+          }
+        ],
+        "severity": {
+          "coding": [
             {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-            "code": "problem-list-item",
-            "display": "Problem List Item"
+              "system": "http://snomed.info/sct",
+              "code": "6736007",
+              "display": "Moderate"
             }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49436004",
+              "display": "Atrial fibrillation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "onsetDateTime": "2023-11-20",
+        "recordedDate": "2023-11-20T13:15:00Z",
+        "participant": [
+          {
+            "function": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
+                  "code": "ATND",
+                  "display": "Attender"
+                }
+              ]
+            },
+            "actor": {
+              "reference": "Practitioner/dr-sarah-martinez"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Paroxysmal atrial fibrillation, CHA2DS2-VASc score 4. Anticoagulation initiated with warfarin. Rate control achieved with beta-blocker."
+          }
         ]
-        }
-    ],
-    "severity": {
-        "coding": [
-        {
-            "system": "http://snomed.info/sct",
-            "code": "6736007",
-            "display": "Moderate"
-        }
-        ]
+      }
     },
-    "code": {
-        "coding": [
-        {
-            "system": "http://snomed.info/sct",
-            "code": "49436004",
-            "display": "Atrial fibrillation"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "onsetDateTime": "2023-11-20",
-    "recordedDate": "2023-11-20T13:15:00Z",
-    "participant": [
-        {
-        "function": {
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-diabetes-type2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
             "coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
-                "code": "ATND",
-                "display": "Attender"
-            }
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
             ]
-        },
-        "actor": {
-            "reference": "Practitioner/dr-sarah-martinez"
-        }
-        }
-    ],
-    "note": [
-        {
-        "text": "Paroxysmal atrial fibrillation, CHA2DS2-VASc score 4. Anticoagulation initiated with warfarin. Rate control achieved with beta-blocker."
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Condition",
-    "id": "condition-diabetes-type2",
-    "clinicalStatus": {
-        "coding": [
-        {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-            "code": "active",
-            "display": "Active"
-        }
-        ]
-    },
-    "verificationStatus": {
-        "coding": [
-        {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-            "code": "confirmed",
-            "display": "Confirmed"
-        }
-        ]
-    },
-    "category": [
-        {
-        "coding": [
+          }
+        ],
+        "severity": {
+          "coding": [
             {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-            "code": "problem-list-item",
-            "display": "Problem List Item"
+              "system": "http://snomed.info/sct",
+              "code": "6736007",
+              "display": "Moderate"
             }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Type 2 diabetes mellitus"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "onsetDateTime": "2014-03-10",
+        "recordedDate": "2014-03-10T10:30:00Z",
+        "participant": [
+          {
+            "function": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
+                  "code": "ATND",
+                  "display": "Attender"
+                }
+              ]
+            },
+            "actor": {
+              "reference": "Practitioner/dr-sarah-martinez"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Type 2 diabetes mellitus with adequate glycemic control on metformin and insulin. Patient follows diabetic diet and monitors blood glucose regularly."
+          }
         ]
-        }
-    ],
-    "severity": {
-        "coding": [
-        {
-            "system": "http://snomed.info/sct",
-            "code": "6736007",
-            "display": "Moderate"
-        }
-        ]
+      }
     },
-    "code": {
-        "coding": [
-        {
-            "system": "http://snomed.info/sct",
-            "code": "44054006",
-            "display": "Type 2 diabetes mellitus"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "onsetDateTime": "2014-03-10",
-    "recordedDate": "2014-03-10T10:30:00Z",
-    "participant": [
-        {
-        "function": {
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-hyperlipidemia",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
             "coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
-                "code": "ATND",
-                "display": "Attender"
-            }
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
             ]
-        },
-        "actor": {
-            "reference": "Practitioner/dr-sarah-martinez"
-        }
-        }
-    ],
-    "note": [
-        {
-        "text": "Type 2 diabetes mellitus with adequate glycemic control on metformin and insulin. Patient follows diabetic diet and monitors blood glucose regularly."
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Condition",
-    "id": "condition-hyperlipidemia",
-    "clinicalStatus": {
-        "coding": [
-        {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-            "code": "active",
-            "display": "Active"
-        }
-        ]
-    },
-    "verificationStatus": {
-        "coding": [
-        {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-            "code": "confirmed",
-            "display": "Confirmed"
-        }
-        ]
-    },
-    "category": [
-        {
-        "coding": [
+          }
+        ],
+        "severity": {
+          "coding": [
             {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-            "code": "problem-list-item",
-            "display": "Problem List Item"
+              "system": "http://snomed.info/sct",
+              "code": "6736007",
+              "display": "Moderate"
             }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "55822004",
+              "display": "Hyperlipidemia"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "onsetDateTime": "2019-05-12",
+        "recordedDate": "2019-05-12T14:30:00Z",
+        "participant": [
+          {
+            "function": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
+                  "code": "ATND",
+                  "display": "Attender"
+                }
+              ]
+            },
+            "actor": {
+              "reference": "Practitioner/dr-sarah-martinez"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Mixed hyperlipidemia with elevated LDL and triglycerides. Well-controlled on high-intensity statin therapy."
+          }
         ]
-        }
-    ],
-    "severity": {
-        "coding": [
-        {
-            "system": "http://snomed.info/sct",
-            "code": "6736007",
-            "display": "Moderate"
-        }
-        ]
+      }
     },
-    "code": {
-        "coding": [
-        {
-            "system": "http://snomed.info/sct",
-            "code": "55822004",
-            "display": "Hyperlipidemia"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "onsetDateTime": "2019-05-12",
-    "recordedDate": "2019-05-12T14:30:00Z",
-    "participant": [
-        {
-        "function": {
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-chronic-kidney-disease",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
             "coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
-                "code": "ATND",
-                "display": "Attender"
-            }
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
             ]
-        },
-        "actor": {
-            "reference": "Practitioner/dr-sarah-martinez"
-        }
-        }
-    ],
-    "note": [
-        {
-        "text": "Mixed hyperlipidemia with elevated LDL and triglycerides. Well-controlled on high-intensity statin therapy."
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Condition",
-    "id": "condition-chronic-kidney-disease",
-    "clinicalStatus": {
-        "coding": [
-        {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-            "code": "active",
-            "display": "Active"
-        }
-        ]
-    },
-    "verificationStatus": {
-        "coding": [
-        {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-            "code": "confirmed",
-            "display": "Confirmed"
-        }
-        ]
-    },
-    "category": [
-        {
-        "coding": [
+          }
+        ],
+        "severity": {
+          "coding": [
             {
-            "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-            "code": "problem-list-item",
-            "display": "Problem List Item"
+              "system": "http://snomed.info/sct",
+              "code": "6736007",
+              "display": "Moderate"
             }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "709044004",
+              "display": "Chronic kidney disease"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "onsetDateTime": "2023-02-14",
+        "recordedDate": "2023-02-14T09:45:00Z",
+        "participant": [
+          {
+            "function": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
+                  "code": "ATND",
+                  "display": "Attender"
+                }
+              ]
+            },
+            "actor": {
+              "reference": "Practitioner/dr-sarah-martinez"
+            }
+          }
+        ],
+        "stage": [
+          {
+            "summary": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "431857002",
+                  "display": "Chronic kidney disease stage 3A"
+                }
+              ]
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Chronic kidney disease stage 3A (eGFR 45-59 mL/min/1.73m²) secondary to diabetes and hypertension. Monitoring renal function and adjusting medications accordingly."
+          }
         ]
-        }
-    ],
-    "severity": {
-        "coding": [
-        {
-            "system": "http://snomed.info/sct",
-            "code": "6736007",
-            "display": "Moderate"
-        }
-        ]
+      }
     },
-    "code": {
-        "coding": [
-        {
-            "system": "http://snomed.info/sct",
-            "code": "709044004",
-            "display": "Chronic kidney disease"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "onsetDateTime": "2023-02-14",
-    "recordedDate": "2023-02-14T09:45:00Z",
-    "participant": [
-        {
-        "function": {
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-troponin-recent",
+        "status": "final",
+        "category": [
+          {
             "coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/participation-role-type",
-                "code": "ATND",
-                "display": "Attender"
-            }
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
             ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "10839-9",
+              "display": "Troponin I"
+            }
+          ]
         },
-        "actor": {
-            "reference": "Practitioner/dr-sarah-martinez"
-        }
-        }
-    ],
-    "stage": [
-        {
-        "summary": {
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "effectiveDateTime": "2024-09-10T08:30:00Z",
+        "valueQuantity": {
+          "value": 0.02,
+          "unit": "ng/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ng/mL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 0.00,
+              "unit": "ng/mL",
+              "system": "http://unitsofmeasure.org",
+              "code": "ng/mL"
+            },
+            "high": {
+              "value": 0.04,
+              "unit": "ng/mL",
+              "system": "http://unitsofmeasure.org",
+              "code": "ng/mL"
+            },
+            "text": "Normal: <0.04 ng/mL"
+          }
+        ],
+        "interpretation": [
+          {
             "coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "431857002",
-                "display": "Chronic kidney disease stage 3A"
-            }
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
             ]
-        }
-        }
-    ],
-    "note": [
-        {
-        "text": "Chronic kidney disease stage 3A (eGFR 45-59 mL/min/1.73m²) secondary to diabetes and hypertension. Monitoring renal function and adjusting medications accordingly."
-        }
-    ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-bnp-recent",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30934-4",
+              "display": "BNP (B-type natriuretic peptide)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "effectiveDateTime": "2024-09-10T08:30:00Z",
+        "valueQuantity": {
+          "value": 385,
+          "unit": "pg/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "pg/mL"
+        },
+        "referenceRange": [
+          {
+            "high": {
+              "value": 100,
+              "unit": "pg/mL",
+              "system": "http://unitsofmeasure.org",
+              "code": "pg/mL"
+            },
+            "text": "Normal: <100 pg/mL"
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "Elevated BNP consistent with heart failure diagnosis"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-cholesterol-total",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2093-3",
+              "display": "Cholesterol, total"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "effectiveDateTime": "2024-09-10T08:30:00Z",
+        "valueQuantity": {
+          "value": 185,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "high": {
+              "value": 200,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "text": "Desirable: <200 mg/dL"
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-ldl-cholesterol",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2089-1",
+              "display": "LDL cholesterol"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "effectiveDateTime": "2024-09-10T08:30:00Z",
+        "valueQuantity": {
+          "value": 85,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "high": {
+              "value": 70,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "text": "Goal for CAD patients: <70 mg/dL"
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "Above goal for patient with established CAD. Consider statin optimization."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-hdl-cholesterol",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2085-9",
+              "display": "HDL cholesterol"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "effectiveDateTime": "2024-09-10T08:30:00Z",
+        "valueQuantity": {
+          "value": 38,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 40,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "text": "Goal for men: >40 mg/dL"
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-triglycerides",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2571-8",
+              "display": "Triglycerides"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "effectiveDateTime": "2024-09-10T08:30:00Z",
+        "valueQuantity": {
+          "value": 210,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "high": {
+              "value": 150,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "text": "Normal: <150 mg/dL"
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-glucose-fasting",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1558-6",
+              "display": "Fasting glucose"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "effectiveDateTime": "2024-09-10T08:30:00Z",
+        "valueQuantity": {
+          "value": 142,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 70,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "high": {
+              "value": 100,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "text": "Normal: 70-100 mg/dL"
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-hba1c",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "effectiveDateTime": "2024-09-10T08:30:00Z",
+        "valueQuantity": {
+          "value": 7.2,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "referenceRange": [
+          {
+            "high": {
+              "value": 7.0,
+              "unit": "%",
+              "system": "http://unitsofmeasure.org",
+              "code": "%"
+            },
+            "text": "Goal for diabetes: <7.0%"
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "Slightly above goal. Consider medication adjustment or lifestyle counseling."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-creatinine",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2160-0",
+              "display": "Creatinine"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "effectiveDateTime": "2024-09-10T08:30:00Z",
+        "valueQuantity": {
+          "value": 1.4,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 0.7,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "high": {
+              "value": 1.3,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "text": "Normal male: 0.7-1.3 mg/dL"
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-egfr",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33914-3",
+              "display": "eGFR (estimated glomerular filtration rate)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "effectiveDateTime": "2024-09-10T08:30:00Z",
+        "valueQuantity": {
+          "value": 52,
+          "unit": "mL/min/1.73m2",
+          "system": "http://unitsofmeasure.org",
+          "code": "mL/min/(1.73.m2)"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 60,
+              "unit": "mL/min/1.73m2",
+              "system": "http://unitsofmeasure.org",
+              "code": "mL/min/(1.73.m2)"
+            },
+            "text": "Normal: >60 mL/min/1.73m²"
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "Stage 3A chronic kidney disease. Monitor renal function closely."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-hemoglobin",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "effectiveDateTime": "2024-09-10T08:30:00Z",
+        "valueQuantity": {
+          "value": 11.8,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 13.8,
+              "unit": "g/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "g/dL"
+            },
+            "high": {
+              "value": 17.2,
+              "unit": "g/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "g/dL"
+            },
+            "text": "Normal male: 13.8-17.2 g/dL"
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "Mild anemia, likely related to chronic kidney disease"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-inr",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34714-6",
+              "display": "INR (International Normalized Ratio)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "effectiveDateTime": "2024-09-10T08:30:00Z",
+        "valueQuantity": {
+          "value": 2.3,
+          "system": "http://unitsofmeasure.org",
+          "code": "1"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 2.0,
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            },
+            "high": {
+              "value": 3.0,
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            },
+            "text": "Therapeutic range for AF: 2.0-3.0"
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "Therapeutic anticoagulation for atrial fibrillation"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-sodium",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2951-2",
+              "display": "Sodium"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "effectiveDateTime": "2024-09-10T08:30:00Z",
+        "valueQuantity": {
+          "value": 138,
+          "unit": "mEq/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mEq/L"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 136,
+              "unit": "mEq/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "mEq/L"
+            },
+            "high": {
+              "value": 145,
+              "unit": "mEq/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "mEq/L"
+            },
+            "text": "Normal: 136-145 mEq/L"
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-potassium",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2823-3",
+              "display": "Potassium"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-p01"
+        },
+        "effectiveDateTime": "2024-09-10T08:30:00Z",
+        "valueQuantity": {
+          "value": 4.2,
+          "unit": "mEq/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mEq/L"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 3.5,
+              "unit": "mEq/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "mEq/L"
+            },
+            "high": {
+              "value": 5.1,
+              "unit": "mEq/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "mEq/L"
+            },
+            "text": "Normal: 3.5-5.1 mEq/L"
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ]
+      }
     }
-},
-{
-    "resource": {
-    "resourceType": "Observation",
-    "id": "obs-troponin-recent",
-    "status": "final",
-    "category": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "Laboratory"
-            }
-        ]
-        }
-    ],
-    "code": {
-        "coding": [
-        {
-            "system": "http://loinc.org",
-            "code": "10839-9",
-            "display": "Troponin I"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "effectiveDateTime": "2024-09-10T08:30:00Z",
-    "valueQuantity": {
-        "value": 0.02,
-        "unit": "ng/mL",
-        "system": "http://unitsofmeasure.org",
-        "code": "ng/mL"
-    },
-    "referenceRange": [
-        {
-        "low": {
-            "value": 0.00,
-            "unit": "ng/mL",
-            "system": "http://unitsofmeasure.org",
-            "code": "ng/mL"
-        },
-        "high": {
-            "value": 0.04,
-            "unit": "ng/mL",
-            "system": "http://unitsofmeasure.org",
-            "code": "ng/mL"
-        },
-        "text": "Normal: <0.04 ng/mL"
-        }
-    ],
-    "interpretation": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-            "code": "N",
-            "display": "Normal"
-            }
-        ]
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Observation",
-    "id": "obs-bnp-recent",
-    "status": "final",
-    "category": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "Laboratory"
-            }
-        ]
-        }
-    ],
-    "code": {
-        "coding": [
-        {
-            "system": "http://loinc.org",
-            "code": "30934-4",
-            "display": "BNP (B-type natriuretic peptide)"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "effectiveDateTime": "2024-09-10T08:30:00Z",
-    "valueQuantity": {
-        "value": 385,
-        "unit": "pg/mL",
-        "system": "http://unitsofmeasure.org",
-        "code": "pg/mL"
-    },
-    "referenceRange": [
-        {
-        "high": {
-            "value": 100,
-            "unit": "pg/mL",
-            "system": "http://unitsofmeasure.org",
-            "code": "pg/mL"
-        },
-        "text": "Normal: <100 pg/mL"
-        }
-    ],
-    "interpretation": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-            "code": "H",
-            "display": "High"
-            }
-        ]
-        }
-    ],
-    "note": [
-        {
-        "text": "Elevated BNP consistent with heart failure diagnosis"
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Observation",
-    "id": "obs-cholesterol-total",
-    "status": "final",
-    "category": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "Laboratory"
-            }
-        ]
-        }
-    ],
-    "code": {
-        "coding": [
-        {
-            "system": "http://loinc.org",
-            "code": "2093-3",
-            "display": "Cholesterol, total"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "effectiveDateTime": "2024-09-10T08:30:00Z",
-    "valueQuantity": {
-        "value": 185,
-        "unit": "mg/dL",
-        "system": "http://unitsofmeasure.org",
-        "code": "mg/dL"
-    },
-    "referenceRange": [
-        {
-        "high": {
-            "value": 200,
-            "unit": "mg/dL",
-            "system": "http://unitsofmeasure.org",
-            "code": "mg/dL"
-        },
-        "text": "Desirable: <200 mg/dL"
-        }
-    ],
-    "interpretation": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-            "code": "N",
-            "display": "Normal"
-            }
-        ]
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Observation",
-    "id": "obs-ldl-cholesterol",
-    "status": "final",
-    "category": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "Laboratory"
-            }
-        ]
-        }
-    ],
-    "code": {
-        "coding": [
-        {
-            "system": "http://loinc.org",
-            "code": "2089-1",
-            "display": "LDL cholesterol"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "effectiveDateTime": "2024-09-10T08:30:00Z",
-    "valueQuantity": {
-        "value": 85,
-        "unit": "mg/dL",
-        "system": "http://unitsofmeasure.org",
-        "code": "mg/dL"
-    },
-    "referenceRange": [
-        {
-        "high": {
-            "value": 70,
-            "unit": "mg/dL",
-            "system": "http://unitsofmeasure.org",
-            "code": "mg/dL"
-        },
-        "text": "Goal for CAD patients: <70 mg/dL"
-        }
-    ],
-    "interpretation": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-            "code": "H",
-            "display": "High"
-            }
-        ]
-        }
-    ],
-    "note": [
-        {
-        "text": "Above goal for patient with established CAD. Consider statin optimization."
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Observation",
-    "id": "obs-hdl-cholesterol",
-    "status": "final",
-    "category": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "Laboratory"
-            }
-        ]
-        }
-    ],
-    "code": {
-        "coding": [
-        {
-            "system": "http://loinc.org",
-            "code": "2085-9",
-            "display": "HDL cholesterol"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "effectiveDateTime": "2024-09-10T08:30:00Z",
-    "valueQuantity": {
-        "value": 38,
-        "unit": "mg/dL",
-        "system": "http://unitsofmeasure.org",
-        "code": "mg/dL"
-    },
-    "referenceRange": [
-        {
-        "low": {
-            "value": 40,
-            "unit": "mg/dL",
-            "system": "http://unitsofmeasure.org",
-            "code": "mg/dL"
-        },
-        "text": "Goal for men: >40 mg/dL"
-        }
-    ],
-    "interpretation": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-            "code": "L",
-            "display": "Low"
-            }
-        ]
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Observation",
-    "id": "obs-triglycerides",
-    "status": "final",
-    "category": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "Laboratory"
-            }
-        ]
-        }
-    ],
-    "code": {
-        "coding": [
-        {
-            "system": "http://loinc.org",
-            "code": "2571-8",
-            "display": "Triglycerides"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "effectiveDateTime": "2024-09-10T08:30:00Z",
-    "valueQuantity": {
-        "value": 210,
-        "unit": "mg/dL",
-        "system": "http://unitsofmeasure.org",
-        "code": "mg/dL"
-    },
-    "referenceRange": [
-        {
-        "high": {
-            "value": 150,
-            "unit": "mg/dL",
-            "system": "http://unitsofmeasure.org",
-            "code": "mg/dL"
-        },
-        "text": "Normal: <150 mg/dL"
-        }
-    ],
-    "interpretation": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-            "code": "H",
-            "display": "High"
-            }
-        ]
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Observation",
-    "id": "obs-glucose-fasting",
-    "status": "final",
-    "category": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "Laboratory"
-            }
-        ]
-        }
-    ],
-    "code": {
-        "coding": [
-        {
-            "system": "http://loinc.org",
-            "code": "1558-6",
-            "display": "Fasting glucose"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "effectiveDateTime": "2024-09-10T08:30:00Z",
-    "valueQuantity": {
-        "value": 142,
-        "unit": "mg/dL",
-        "system": "http://unitsofmeasure.org",
-        "code": "mg/dL"
-    },
-    "referenceRange": [
-        {
-        "low": {
-            "value": 70,
-            "unit": "mg/dL",
-            "system": "http://unitsofmeasure.org",
-            "code": "mg/dL"
-        },
-        "high": {
-            "value": 100,
-            "unit": "mg/dL",
-            "system": "http://unitsofmeasure.org",
-            "code": "mg/dL"
-        },
-        "text": "Normal: 70-100 mg/dL"
-        }
-    ],
-    "interpretation": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-            "code": "H",
-            "display": "High"
-            }
-        ]
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Observation",
-    "id": "obs-hba1c",
-    "status": "final",
-    "category": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "Laboratory"
-            }
-        ]
-        }
-    ],
-    "code": {
-        "coding": [
-        {
-            "system": "http://loinc.org",
-            "code": "4548-4",
-            "display": "Hemoglobin A1c"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "effectiveDateTime": "2024-09-10T08:30:00Z",
-    "valueQuantity": {
-        "value": 7.2,
-        "unit": "%",
-        "system": "http://unitsofmeasure.org",
-        "code": "%"
-    },
-    "referenceRange": [
-        {
-        "high": {
-            "value": 7.0,
-            "unit": "%",
-            "system": "http://unitsofmeasure.org",
-            "code": "%"
-        },
-        "text": "Goal for diabetes: <7.0%"
-        }
-    ],
-    "interpretation": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-            "code": "H",
-            "display": "High"
-            }
-        ]
-        }
-    ],
-    "note": [
-        {
-        "text": "Slightly above goal. Consider medication adjustment or lifestyle counseling."
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Observation",
-    "id": "obs-creatinine",
-    "status": "final",
-    "category": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "Laboratory"
-            }
-        ]
-        }
-    ],
-    "code": {
-        "coding": [
-        {
-            "system": "http://loinc.org",
-            "code": "2160-0",
-            "display": "Creatinine"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "effectiveDateTime": "2024-09-10T08:30:00Z",
-    "valueQuantity": {
-        "value": 1.4,
-        "unit": "mg/dL",
-        "system": "http://unitsofmeasure.org",
-        "code": "mg/dL"
-    },
-    "referenceRange": [
-        {
-        "low": {
-            "value": 0.7,
-            "unit": "mg/dL",
-            "system": "http://unitsofmeasure.org",
-            "code": "mg/dL"
-        },
-        "high": {
-            "value": 1.3,
-            "unit": "mg/dL",
-            "system": "http://unitsofmeasure.org",
-            "code": "mg/dL"
-        },
-        "text": "Normal male: 0.7-1.3 mg/dL"
-        }
-    ],
-    "interpretation": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-            "code": "H",
-            "display": "High"
-            }
-        ]
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Observation",
-    "id": "obs-egfr",
-    "status": "final",
-    "category": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "Laboratory"
-            }
-        ]
-        }
-    ],
-    "code": {
-        "coding": [
-        {
-            "system": "http://loinc.org",
-            "code": "33914-3",
-            "display": "eGFR (estimated glomerular filtration rate)"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "effectiveDateTime": "2024-09-10T08:30:00Z",
-    "valueQuantity": {
-        "value": 52,
-        "unit": "mL/min/1.73m2",
-        "system": "http://unitsofmeasure.org",
-        "code": "mL/min/(1.73.m2)"
-    },
-    "referenceRange": [
-        {
-        "low": {
-            "value": 60,
-            "unit": "mL/min/1.73m2",
-            "system": "http://unitsofmeasure.org",
-            "code": "mL/min/(1.73.m2)"
-        },
-        "text": "Normal: >60 mL/min/1.73m²"
-        }
-    ],
-    "interpretation": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-            "code": "L",
-            "display": "Low"
-            }
-        ]
-        }
-    ],
-    "note": [
-        {
-        "text": "Stage 3A chronic kidney disease. Monitor renal function closely."
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Observation",
-    "id": "obs-hemoglobin",
-    "status": "final",
-    "category": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "Laboratory"
-            }
-        ]
-        }
-    ],
-    "code": {
-        "coding": [
-        {
-            "system": "http://loinc.org",
-            "code": "718-7",
-            "display": "Hemoglobin"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "effectiveDateTime": "2024-09-10T08:30:00Z",
-    "valueQuantity": {
-        "value": 11.8,
-        "unit": "g/dL",
-        "system": "http://unitsofmeasure.org",
-        "code": "g/dL"
-    },
-    "referenceRange": [
-        {
-        "low": {
-            "value": 13.8,
-            "unit": "g/dL",
-            "system": "http://unitsofmeasure.org",
-            "code": "g/dL"
-        },
-        "high": {
-            "value": 17.2,
-            "unit": "g/dL",
-            "system": "http://unitsofmeasure.org",
-            "code": "g/dL"
-        },
-        "text": "Normal male: 13.8-17.2 g/dL"
-        }
-    ],
-    "interpretation": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-            "code": "L",
-            "display": "Low"
-            }
-        ]
-        }
-    ],
-    "note": [
-        {
-        "text": "Mild anemia, likely related to chronic kidney disease"
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Observation",
-    "id": "obs-inr",
-    "status": "final",
-    "category": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "Laboratory"
-            }
-        ]
-        }
-    ],
-    "code": {
-        "coding": [
-        {
-            "system": "http://loinc.org",
-            "code": "34714-6",
-            "display": "INR (International Normalized Ratio)"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "effectiveDateTime": "2024-09-10T08:30:00Z",
-    "valueQuantity": {
-        "value": 2.3,
-        "system": "http://unitsofmeasure.org",
-        "code": "1"
-    },
-    "referenceRange": [
-        {
-        "low": {
-            "value": 2.0,
-            "system": "http://unitsofmeasure.org",
-            "code": "1"
-        },
-        "high": {
-            "value": 3.0,
-            "system": "http://unitsofmeasure.org",
-            "code": "1"
-        },
-        "text": "Therapeutic range for AF: 2.0-3.0"
-        }
-    ],
-    "interpretation": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-            "code": "N",
-            "display": "Normal"
-            }
-        ]
-        }
-    ],
-    "note": [
-        {
-        "text": "Therapeutic anticoagulation for atrial fibrillation"
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Observation",
-    "id": "obs-sodium",
-    "status": "final",
-    "category": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "Laboratory"
-            }
-        ]
-        }
-    ],
-    "code": {
-        "coding": [
-        {
-            "system": "http://loinc.org",
-            "code": "2951-2",
-            "display": "Sodium"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "effectiveDateTime": "2024-09-10T08:30:00Z",
-    "valueQuantity": {
-        "value": 138,
-        "unit": "mEq/L",
-        "system": "http://unitsofmeasure.org",
-        "code": "mEq/L"
-    },
-    "referenceRange": [
-        {
-        "low": {
-            "value": 136,
-            "unit": "mEq/L",
-            "system": "http://unitsofmeasure.org",
-            "code": "mEq/L"
-        },
-        "high": {
-            "value": 145,
-            "unit": "mEq/L",
-            "system": "http://unitsofmeasure.org",
-            "code": "mEq/L"
-        },
-        "text": "Normal: 136-145 mEq/L"
-        }
-    ],
-    "interpretation": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-            "code": "N",
-            "display": "Normal"
-            }
-        ]
-        }
-    ]
-    }
-},
-{
-    "resource": {
-    "resourceType": "Observation",
-    "id": "obs-potassium",
-    "status": "final",
-    "category": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-            "code": "laboratory",
-            "display": "Laboratory"
-            }
-        ]
-        }
-    ],
-    "code": {
-        "coding": [
-        {
-            "system": "http://loinc.org",
-            "code": "2823-3",
-            "display": "Potassium"
-        }
-        ]
-    },
-    "subject": {
-        "reference": "Patient/patient-p01"
-    },
-    "effectiveDateTime": "2024-09-10T08:30:00Z",
-    "valueQuantity": {
-        "value": 4.2,
-        "unit": "mEq/L",
-        "system": "http://unitsofmeasure.org",
-        "code": "mEq/L"
-    },
-    "referenceRange": [
-        {
-        "low": {
-            "value": 3.5,
-            "unit": "mEq/L",
-            "system": "http://unitsofmeasure.org",
-            "code": "mEq/L"
-        },
-        "high": {
-            "value": 5.1,
-            "unit": "mEq/L",
-            "system": "http://unitsofmeasure.org",
-            "code": "mEq/L"
-        },
-        "text": "Normal: 3.5-5.1 mEq/L"
-        }
-    ],
-    "interpretation": [
-        {
-        "coding": [
-            {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-            "code": "N",
-            "display": "Normal"
-            }
-        ]
-        }
-    ]
-    }
+  ]
 }
