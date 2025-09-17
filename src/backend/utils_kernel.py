@@ -26,6 +26,7 @@ from kernel_agents.planner_agent import PlannerAgent
 from kernel_agents.procurement_agent import ProcurementAgent
 from kernel_agents.product_agent import ProductAgent
 from kernel_agents.tech_support_agent import TechSupportAgent
+from kernel_agents.generic_agent import GenericAgent
 from models.messages_kernel import AgentType
 from semantic_kernel.agents.azure_ai.azure_ai_agent import AzureAIAgent
 
@@ -95,7 +96,7 @@ async def get_agents(session_id: str, user_id: str) -> Dict[str, Any]:
             AgentType.MARKETING: MarketingAgent.__name__,
             AgentType.PROCUREMENT: ProcurementAgent.__name__,
             AgentType.TECH_SUPPORT: TechSupportAgent.__name__,
-            AgentType.GENERIC: TechSupportAgent.__name__,
+            AgentType.GENERIC: GenericAgent.__name__,
             AgentType.HUMAN: HumanAgent.__name__,
             AgentType.PLANNER: PlannerAgent.__name__,
             AgentType.GROUP_CHAT_MANAGER: GroupChatManager.__name__,
