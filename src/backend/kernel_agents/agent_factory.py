@@ -13,13 +13,8 @@ from kernel_agents.agent_base import BaseAgent
 from kernel_agents.generic_agent import GenericAgent
 from kernel_agents.group_chat_manager import GroupChatManager
 # Import all specialized agent implementations
-from kernel_agents.hr_agent import HrAgent
 from kernel_agents.human_agent import HumanAgent
-from kernel_agents.marketing_agent import MarketingAgent
 from kernel_agents.planner_agent import PlannerAgent  # Add PlannerAgent import
-from kernel_agents.procurement_agent import ProcurementAgent
-from kernel_agents.product_agent import ProductAgent
-from kernel_agents.tech_support_agent import TechSupportAgent
 from models.messages_kernel import AgentType, PlannerResponsePlan
 # pylint:disable=E0611
 from semantic_kernel.agents.azure_ai.azure_ai_agent import AzureAIAgent
@@ -32,11 +27,6 @@ class AgentFactory:
 
     # Mapping of agent types to their implementation classes
     _agent_classes: Dict[AgentType, Type[BaseAgent]] = {
-        AgentType.HR: HrAgent,
-        AgentType.MARKETING: MarketingAgent,
-        AgentType.PRODUCT: ProductAgent,
-        AgentType.PROCUREMENT: ProcurementAgent,
-        AgentType.TECH_SUPPORT: TechSupportAgent,
         AgentType.GENERIC: GenericAgent,
         AgentType.HUMAN: HumanAgent,
         AgentType.PLANNER: PlannerAgent,
@@ -45,11 +35,6 @@ class AgentFactory:
 
     # Mapping of agent types to their string identifiers (for automatic tool loading)
     _agent_type_strings: Dict[AgentType, str] = {
-        AgentType.HR: AgentType.HR.value,
-        AgentType.MARKETING: AgentType.MARKETING.value,
-        AgentType.PRODUCT: AgentType.PRODUCT.value,
-        AgentType.PROCUREMENT: AgentType.PROCUREMENT.value,
-        AgentType.TECH_SUPPORT: AgentType.TECH_SUPPORT.value,
         AgentType.GENERIC: AgentType.GENERIC.value,
         AgentType.HUMAN: AgentType.HUMAN.value,
         AgentType.PLANNER: AgentType.PLANNER.value,
@@ -58,11 +43,6 @@ class AgentFactory:
 
     # System messages for each agent type
     _agent_system_messages: Dict[AgentType, str] = {
-        AgentType.HR: HrAgent.default_system_message(),
-        AgentType.MARKETING: MarketingAgent.default_system_message(),
-        AgentType.PRODUCT: ProductAgent.default_system_message(),
-        AgentType.PROCUREMENT: ProcurementAgent.default_system_message(),
-        AgentType.TECH_SUPPORT: TechSupportAgent.default_system_message(),
         AgentType.GENERIC: GenericAgent.default_system_message(),
         AgentType.HUMAN: HumanAgent.default_system_message(),
         AgentType.PLANNER: PlannerAgent.default_system_message(),

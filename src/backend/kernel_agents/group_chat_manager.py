@@ -67,11 +67,6 @@ class GroupChatManager(BaseAgent):
         # Store additional GroupChatManager-specific attributes
         self._available_agents = [
             AgentType.HUMAN.value,
-            AgentType.HR.value,
-            AgentType.MARKETING.value,
-            AgentType.PRODUCT.value,
-            AgentType.PROCUREMENT.value,
-            AgentType.TECH_SUPPORT.value,
             AgentType.GENERIC.value,
         ]
         self._agent_tools_list = agent_tools_list or []
