@@ -251,7 +251,9 @@ from helpers.azure_credential_utils import get_azure_credential
 from kernel_agents.agent_factory import AgentFactory
 from kernel_agents.group_chat_manager import GroupChatManager
 from kernel_agents.human_agent import HumanAgent
+from kernel_agents.generic_agent import GenericAgent
 from kernel_agents.planner_agent import PlannerAgent
+from kernel_agents.patient_agent import PatientAgent
 from models.messages_kernel import AgentType
 from semantic_kernel.agents.azure_ai.azure_ai_agent import AzureAIAgent
 
@@ -319,6 +321,7 @@ async def get_agents(session_id: str, user_id: str) -> Dict[str, Any]:
             AgentType.GENERIC: GenericAgent.__name__,
             AgentType.HUMAN: HumanAgent.__name__,
             AgentType.PLANNER: PlannerAgent.__name__,
+            AgentType.PATIENT: PatientAgent.__name__,
             AgentType.GROUP_CHAT_MANAGER: GroupChatManager.__name__,
         }
 
