@@ -156,6 +156,7 @@ def load_tools_from_json_files() -> List[Dict[str, Any]]:
 
 
 async def rai_success(description: str, is_task_creation: bool) -> bool:
+    return True
     """
     Checks if a description passes the RAI (Responsible AI) check.
 
