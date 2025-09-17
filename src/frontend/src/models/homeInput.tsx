@@ -11,13 +11,13 @@ export const quickTasks: QuickTask[] = [
     {
         id: "onboard",
         title: "Pationed Heart History",
-        description: "Based on the Henderson's patient history, summarize key health events, with relevance for cardiac radiology.",
+        description: "Based on the Henderson patient history, summarize key health events, with relevance for cardiac radiology.",
         icon: <Person20Regular />,
     },
     {
         id: "mobile",
         title: "Pationed Lungs History",
-        description: "Based on the Henderson's patient history, summarize key health events, with relevance for lungs radiology.",
+        description: "Based on the Linda Marie Williams patient history, summarize key health events, with relevance for lungs radiology.",
         icon: <Phone20Regular />,
     },
     // {
