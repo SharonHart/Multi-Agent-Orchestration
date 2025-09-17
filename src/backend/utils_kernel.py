@@ -19,7 +19,6 @@ from helpers.azure_credential_utils import get_azure_credential
 # Import agent factory and the new AppConfig
 from kernel_agents.agent_factory import AgentFactory
 from kernel_agents.group_chat_manager import GroupChatManager
-from kernel_agents.hr_agent import HrAgent
 from kernel_agents.human_agent import HumanAgent
 from kernel_agents.planner_agent import PlannerAgent
 from models.messages_kernel import AgentType
