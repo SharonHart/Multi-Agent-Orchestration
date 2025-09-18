@@ -79,12 +79,9 @@ class PlannerAgent(BaseAgent):
         # Store additional planner-specific attributes
         self._available_agents = available_agents or [
             AgentType.HUMAN.value,
-            AgentType.HR.value,
-            AgentType.MARKETING.value,
-            AgentType.PRODUCT.value,
-            AgentType.PROCUREMENT.value,
-            AgentType.TECH_SUPPORT.value,
             AgentType.GENERIC.value,
+            AgentType.PATIENT.value,
+            AgentType.SUMMARY_VALIDATION.value
         ]
         self._agent_tools_list = {
             AgentType.GENERIC: GenericTools.generate_tools_json_doc(),
