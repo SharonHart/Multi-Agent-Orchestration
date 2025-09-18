@@ -13,9 +13,9 @@ class PatientTools:
 
     # File mapping - maps patient IDs to JSON files
     FILE_MAPPING = {
-        "patient-p01": "p01-heart.json",
-        "patient-p02": "p02-lungs.json",
-        "patient-p03": "p03-healthy.json"
+        "patient-p01": {"name": "Robert James Henderson", "file": "p01-heart.json"},
+        "patient-p02": {"name": "Linda Marie Williams", "file": "p02-lungs.json"},
+        "patient-p03": {"name": "Alex Jordan Thompson", "file": "p03-healthy.json"}
     }
 
     @staticmethod
@@ -29,7 +29,7 @@ class PatientTools:
             # Construct file path relative to the backend directory
             current_dir = os.path.dirname(os.path.abspath(__file__))
             backend_dir = os.path.dirname(current_dir)
-            file_path = os.path.join(backend_dir, "data", "patients", filename)
+            file_path = os.path.join(backend_dir, "data", "patients", filename["file"])
 
             if not os.path.exists(file_path):
                 return f"Error: Patient file not found: {file_path}"
@@ -43,32 +43,52 @@ class PatientTools:
 
     @staticmethod
     @kernel_function(
-        description="Get patient data by patient ID. Valid IDs: patient-p01, patient-p02, patient-p03"
+        description="List full patient names"
     )
-    async def get_patient_by_id(patient_id: str) -> str:
+    async def get_patient_names() -> str:
         """
-        Get patient data by patient ID.
+        Returns a JSON array (string) containing full patient names for all known patients.
+        """
+        names = [info["name"] for info in PatientTools.FILE_MAPPING.values()]
+        return json.dumps(names, ensure_ascii=False)
+
+    @staticmethod
+    @kernel_function(
+        description="Get patient data by patient name. Valid names: patient full names in FILE_MAPPING"
+    )
+    async def get_patient_by_name(patient_name: str) -> str:
+        """
+        Get patient data by patient full name.
 
         Args:
-            patient_id: Patient ID (e.g., patient-p01, patient-p02, patient-p03)
+            patient_name: Full patient name (e.g., 'Robert James Henderson')
 
         Returns:
             Full FHIR JSON content if patient found, error message if not found
         """
-        if not patient_id or not patient_id.strip():
-            return "Error: Please provide a patient ID."
+        if not patient_name or not patient_name.strip():
+            return "Error: Please provide a patient name."
 
-        patient_id = patient_id.strip()
+        query = patient_name.strip().lower()
 
-        # Check if patient ID exists
-        if patient_id not in PatientTools.FILE_MAPPING:
-            available_ids = ", ".join(PatientTools.FILE_MAPPING.keys())
-            return f"Error: Patient ID '{patient_id}' not found. Available IDs: {available_ids}"
+        # Find the patient id by matching the provided name (case-insensitive)
+        matched_id = None
+        for pid, info in PatientTools.FILE_MAPPING.items():
+            if isinstance(info, dict):
+                name = info.get("name", "")
+                if isinstance(name, str) and name.strip().lower() == query:
+                    matched_id = pid
+                    break
 
-        # Load and return the patient file content
-        patient_content = PatientTools._load_patient_file(patient_id)
+        if not matched_id:
+            available_names = [v.get("name") for v in PatientTools.FILE_MAPPING.values() if isinstance(v, dict) and v.get("name")]
+            available_str = ", ".join(available_names)
+            return f"Error: Patient name '{patient_name}' not found. Available names: {available_str}"
 
-        if patient_content.startswith("Error:"):
+        # Load and return the patient file content using the matched id
+        patient_content = PatientTools._load_patient_file(matched_id)
+
+        if isinstance(patient_content, str) and patient_content.startswith("Error:"):
             return patient_content
 
         return patient_content
