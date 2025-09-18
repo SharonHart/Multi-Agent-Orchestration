@@ -10,6 +10,8 @@ from event_utils import track_event_if_configured
 from kernel_agents.agent_base import BaseAgent
 from kernel_tools.generic_tools import GenericTools
 from kernel_tools.patient_tools import PatientTools
+from kernel_tools.fhir_summary_tools import FHIRSummaryTools
+from kernel_tools.summary_validation_tools import SummaryValidationTools
 from models.messages_kernel import (
     AgentMessage,
     AgentType,
@@ -87,6 +89,8 @@ class PlannerAgent(BaseAgent):
         self._agent_tools_list = {
             AgentType.GENERIC: GenericTools.generate_tools_json_doc(),
             AgentType.PATIENT: PatientTools.generate_tools_json_doc(),
+            AgentType.FHIR_SUMMARY: FHIRSummaryTools.generate_tools_json_doc(),
+            AgentType.SUMMARY_VALIDATION: SummaryValidationTools.generate_tools_json_doc(),
         }
 
         self._agent_instances = agent_instances or {}
