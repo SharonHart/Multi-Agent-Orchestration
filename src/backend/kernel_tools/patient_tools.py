@@ -7,7 +7,7 @@ from semantic_kernel.functions import kernel_function
 from models.messages_kernel import AgentType
 
 class PatientTools:
-    """Define Patient Agent functions (tools) for patient lookup by ID"""
+    """Define Patient Agent functions (tools) for patient lookup by name"""
 
     agent_name = AgentType.PATIENT.value
 
