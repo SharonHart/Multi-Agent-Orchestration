@@ -1,45 +1,14 @@
 import inspect
 import json
-import os
 from typing import Callable, Dict, get_type_hints
 
 from semantic_kernel.functions import kernel_function
 from models.messages_kernel import AgentType
 
 class FHIRSummaryTools:
-    """Define FHIR Summary Agent functions (tools) for analyzing FHIR data and generating patient history summaries"""
+    """Define FHIR Summary Agent functions (tools) for analyzing FHIR JSON data and generating patient history summaries"""
 
     agent_name = AgentType.FHIR_SUMMARY.value
-
-    # File mapping - maps patient IDs to JSON files
-    FILE_MAPPING = {
-        "patient-p01": "p01-heart.json",
-        "patient-p02": "p02-lungs.json",
-        "patient-p03": "p03-healthy.json"
-    }
-
-    @staticmethod
-    def _load_patient_file(patient_id: str) -> str:
-        """Load patient file content by ID"""
-        try:
-            filename = FHIRSummaryTools.FILE_MAPPING.get(patient_id)
-            if not filename:
-                return f"Error: No file mapping found for patient ID: {patient_id}"
-
-            # Construct file path relative to the backend directory
-            current_dir = os.path.dirname(os.path.abspath(__file__))
-            backend_dir = os.path.dirname(current_dir)
-            file_path = os.path.join(backend_dir, "data", "patients", filename)
-
-            if not os.path.exists(file_path):
-                return f"Error: Patient file not found: {file_path}"
-
-            with open(file_path, 'r', encoding='utf-8') as file:
-                content = file.read()
-                return content
-
-        except Exception as e:
-            return f"Error loading patient file: {str(e)}"
 
     @staticmethod
     def _parse_fhir_data(fhir_content: str) -> Dict:
@@ -247,36 +216,28 @@ class FHIRSummaryTools:
 
     @staticmethod
     @kernel_function(
-        description="Generate a concise 2-4 sentence summary of patient medical history from FHIR data. Includes major diagnoses, key lab tests, and medications. Valid patient IDs: patient-p01, patient-p02, patient-p03"
+        description="Generate a concise 2-4 sentence summary of patient medical history from FHIR JSON data. Takes FHIR JSON data (obtained from Patient agent) and generates summary with major diagnoses, key lab tests, and medications."
     )
-    async def generate_patient_summary(patient_id: str) -> str:
+    async def generate_patient_summary(fhir_json_data: str) -> str:
         """
-        Generate a concise summary of patient medical history from FHIR data.
+        Generate a concise summary of patient medical history from FHIR JSON data.
 
         Args:
-            patient_id: Patient ID (e.g., patient-p01, patient-p02, patient-p03)
+            fhir_json_data: Complete FHIR JSON data string (as obtained from Patient agent)
 
         Returns:
             2-4 sentence summary including major diagnoses, lab tests, and medications
         """
-        if not patient_id or not patient_id.strip():
-            return "Error: Please provide a patient ID."
+        if not fhir_json_data or not fhir_json_data.strip():
+            return "Error: Please provide FHIR JSON data."
 
-        patient_id = patient_id.strip()
-
-        # Check if patient ID exists
-        if patient_id not in FHIRSummaryTools.FILE_MAPPING:
-            available_ids = ", ".join(FHIRSummaryTools.FILE_MAPPING.keys())
-            return f"Error: Patient ID '{patient_id}' not found. Available IDs: {available_ids}"
-
-        # Load the patient file content
-        fhir_content = FHIRSummaryTools._load_patient_file(patient_id)
-
-        if fhir_content.startswith("Error:"):
-            return fhir_content
+        fhir_content = fhir_json_data.strip()
 
         # Parse FHIR data
         parsed_data = FHIRSummaryTools._parse_fhir_data(fhir_content)
+        
+        if "error" in parsed_data:
+            return f"Error parsing FHIR data: {parsed_data['error']}"
         
         # Generate and return summary
         summary = FHIRSummaryTools._generate_summary(parsed_data)
@@ -285,33 +246,22 @@ class FHIRSummaryTools:
 
     @staticmethod
     @kernel_function(
-        description="Get detailed analysis of patient conditions, lab tests, and medications from FHIR data. Returns structured information for the specified patient."
+        description="Get detailed analysis of patient conditions, lab tests, and medications from FHIR JSON data. Takes FHIR JSON data (obtained from Patient agent) and returns structured information."
     )
-    async def analyze_patient_data(patient_id: str) -> str:
+    async def analyze_patient_data(fhir_json_data: str) -> str:
         """
-        Analyze patient FHIR data and return detailed structured information.
+        Analyze patient FHIR JSON data and return detailed structured information.
 
         Args:
-            patient_id: Patient ID (e.g., patient-p01, patient-p02, patient-p03)
+            fhir_json_data: Complete FHIR JSON data string (as obtained from Patient agent)
 
         Returns:
             Detailed structured analysis of patient conditions, observations, and medications
         """
-        if not patient_id or not patient_id.strip():
-            return "Error: Please provide a patient ID."
+        if not fhir_json_data or not fhir_json_data.strip():
+            return "Error: Please provide FHIR JSON data."
 
-        patient_id = patient_id.strip()
-
-        # Check if patient ID exists
-        if patient_id not in FHIRSummaryTools.FILE_MAPPING:
-            available_ids = ", ".join(FHIRSummaryTools.FILE_MAPPING.keys())
-            return f"Error: Patient ID '{patient_id}' not found. Available IDs: {available_ids}"
-
-        # Load the patient file content
-        fhir_content = FHIRSummaryTools._load_patient_file(patient_id)
-
-        if fhir_content.startswith("Error:"):
-            return fhir_content
+        fhir_content = fhir_json_data.strip()
 
         # Parse FHIR data
         parsed_data = FHIRSummaryTools._parse_fhir_data(fhir_content)
