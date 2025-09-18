@@ -50,6 +50,7 @@ class AgentType(str, Enum):
     PLANNER = "Planner_Agent"
     SUMMARY_VALIDATION = "Summary_Validation_Agent"  # Add this line
     PATIENT = "Patient_Agent"
+    FHIR_SUMMARY = "FHIR_Summary_Agent"
 
     # Add other agents as needed
 

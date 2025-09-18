@@ -92,6 +92,7 @@ async def get_agents(session_id: str, user_id: str) -> Dict[str, Any]:
             AgentType.HUMAN: HumanAgent.__name__,
             AgentType.PLANNER: PlannerAgent.__name__,
             AgentType.PATIENT: PatientAgent.__name__,
+            AgentType.FHIR_SUMMARY: "FHIRSummaryAgent",
             AgentType.GROUP_CHAT_MANAGER: GroupChatManager.__name__,
             AgentType.SUMMARY_VALIDATION: SummaryValidationAgent.__name__,
         }

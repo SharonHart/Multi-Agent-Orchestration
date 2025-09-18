@@ -16,6 +16,7 @@ from kernel_agents.group_chat_manager import GroupChatManager
 # Import all specialized agent implementations
 from kernel_agents.human_agent import HumanAgent
 from kernel_agents.patient_agent import PatientAgent
+from kernel_agents.fhir_summary_agent import FHIRSummaryAgent
 from kernel_agents.planner_agent import PlannerAgent
 from kernel_agents.summary_validation_agent import SummaryValidationAgent
 from models.messages_kernel import AgentType, PlannerResponsePlan
@@ -33,6 +34,7 @@ class AgentFactory:
         AgentType.GENERIC: GenericAgent,
         AgentType.HUMAN: HumanAgent,
         AgentType.PATIENT: PatientAgent,
+        AgentType.FHIR_SUMMARY: FHIRSummaryAgent,
         AgentType.PLANNER: PlannerAgent,
         AgentType.GROUP_CHAT_MANAGER: GroupChatManager,  # Add GroupChatManager
         AgentType.SUMMARY_VALIDATION: SummaryValidationAgent,  # Add this line
@@ -44,6 +46,7 @@ class AgentFactory:
         AgentType.GENERIC: AgentType.GENERIC.value,
         AgentType.HUMAN: AgentType.HUMAN.value,
         AgentType.PATIENT: AgentType.PATIENT.value,
+        AgentType.FHIR_SUMMARY: AgentType.FHIR_SUMMARY.value,
         AgentType.PLANNER: AgentType.PLANNER.value,
         AgentType.GROUP_CHAT_MANAGER: AgentType.GROUP_CHAT_MANAGER.value,
         AgentType.SUMMARY_VALIDATION: AgentType.SUMMARY_VALIDATION.value,  # Add this line
@@ -55,6 +58,7 @@ class AgentFactory:
         AgentType.GENERIC: GenericAgent.default_system_message(),
         AgentType.HUMAN: HumanAgent.default_system_message(),
         AgentType.PATIENT: PatientAgent.default_system_message(),
+        AgentType.FHIR_SUMMARY: FHIRSummaryAgent.default_system_message(),
         AgentType.PLANNER: PlannerAgent.default_system_message(),
         AgentType.GROUP_CHAT_MANAGER: GroupChatManager.default_system_message(),
         AgentType.SUMMARY_VALIDATION: SummaryValidationAgent.default_system_message(),  # Add this line
