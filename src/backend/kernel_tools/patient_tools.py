@@ -1,7 +1,7 @@
 import inspect
 import json
 import os
-from typing import Callable
+from typing import Callable, get_type_hints
 
 from semantic_kernel.functions import kernel_function
 from models.messages_kernel import AgentType
@@ -95,3 +95,78 @@ class PatientTools:
                 kernel_functions[name] = method
 
         return kernel_functions
+
+    @classmethod
+    def generate_tools_json_doc(cls) -> str:
+        """
+        Generate a JSON document containing information about all methods in the class.
+
+        Returns:
+            str: JSON string containing the methods' information
+        """
+
+        tools_list = []
+
+        # Get all methods from the class that have the kernel_function annotation
+        for name, method in inspect.getmembers(cls, predicate=inspect.isfunction):
+            # Skip this method itself and any private methods
+            if name.startswith("_") or name == "generate_tools_json_doc":
+                continue
+
+            # Check if the method has the kernel_function annotation
+            if hasattr(method, "__kernel_function__"):
+                # Get method description from docstring or kernel_function description
+                description = ""
+                if hasattr(method, "__doc__") and method.__doc__:
+                    description = method.__doc__.strip()
+
+                # Get kernel_function description if available
+                if hasattr(method, "__kernel_function__") and getattr(
+                    method.__kernel_function__, "description", None
+                ):
+                    description = method.__kernel_function__.description
+
+                # Get argument information by introspection
+                sig = inspect.signature(method)
+                args_dict = {}
+
+                # Get type hints if available
+                type_hints = get_type_hints(method)
+
+                # Process parameters
+                for param_name, param in sig.parameters.items():
+                    # Skip first parameter 'cls' for class methods (though we're using staticmethod now)
+                    if param_name in ["cls", "self"]:
+                        continue
+
+                    # Get parameter type
+                    param_type = "string"  # Default type
+                    if param_name in type_hints:
+                        type_obj = type_hints[param_name]
+                        # Convert type to string representation
+                        if hasattr(type_obj, "__name__"):
+                            param_type = type_obj.__name__
+                        else:
+                            param_type = str(type_obj)
+
+                    # Get default value if any
+                    default_value = None
+                    if param.default is not param.empty:
+                        default_value = param.default
+
+                    args_dict[param_name] = {
+                        "type": param_type,
+                        "default": default_value,
+                    }
+
+                # Create tool entry
+                tool_entry = {
+                    "function_name": name,
+                    "description": description,
+                    "parameters": args_dict,
+                }
+
+                tools_list.append(tool_entry)
+
+        # Return the JSON string representation
+        return json.dumps(tools_list, ensure_ascii=False)

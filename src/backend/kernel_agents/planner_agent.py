@@ -9,6 +9,7 @@ from context.cosmos_memory_kernel import CosmosMemoryContext
 from event_utils import track_event_if_configured
 from kernel_agents.agent_base import BaseAgent
 from kernel_tools.generic_tools import GenericTools
+from kernel_tools.patient_tools import PatientTools
 from models.messages_kernel import (
     AgentMessage,
     AgentType,
@@ -85,6 +86,7 @@ class PlannerAgent(BaseAgent):
         ]
         self._agent_tools_list = {
             AgentType.GENERIC: GenericTools.generate_tools_json_doc(),
+            AgentType.PATIENT: PatientTools.generate_tools_json_doc(),
         }
 
         self._agent_instances = agent_instances or {}
@@ -520,7 +522,7 @@ class PlannerAgent(BaseAgent):
         tools_list = []
 
         for agent_name, tools in self._agent_tools_list.items():
-            if agent_name in self._available_agents:
+            if agent_name.value in self._available_agents:
                 tools_list.append(tools)
 
         tools_str = tools_list
